@@ -37,6 +37,9 @@
             color: var(--text-dark);
             line-height: 1.6;
             background-color: var(--white);
+            /* Subtle 'spine/structure' geometric pattern */
+            background-image: radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 0);
+            background-size: 40px 40px;
         }
 
         .container {
@@ -101,6 +104,19 @@
             font-size: 1.125rem;
             color: var(--text-light);
             margin-bottom: 2rem;
+        }
+
+        /* Rotating Text Styles */
+        #hero-headline {
+            min-height: 1.2em;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            opacity: 1;
+            transform: translateY(0);
+            display: inline-block;
         }
 
         /* Form */
@@ -250,7 +266,7 @@
                     <img src="Images/MaxLiving/Maxliving Chiropractic Logo.png" alt="MaxLiving Logo" class="logo"
                         style="height: 250px;">
                 </div>
-                <h1>The Future of Practice Management is Here</h1>
+                <h1 id="hero-headline">Generate over 500 reviews</h1>
                 <p class="hero-text">
                     SKED simplifies your practice management with automated scheduling, patient reminders, and seamless
                     intake flows. Empower your team to focus on care while SKED handles the logistics, reducing no-shows
@@ -318,6 +334,44 @@
         </div>
     </footer>
 
+    <script>
+        const headlines = [
+            "Generate over 500 reviews",
+            "Increase your show up rate",
+            "Let patients manage their appointments"
+        ];
+
+        const headlineElement = document.getElementById('hero-headline');
+        let currentIndex = 0;
+
+        function rotateHeadline() {
+            // Slide out (up)
+            headlineElement.style.transform = 'translateY(-20px)';
+            headlineElement.style.opacity = '0';
+
+            setTimeout(() => {
+                // Change text
+                currentIndex = (currentIndex + 1) % headlines.length;
+                headlineElement.textContent = headlines[currentIndex];
+
+                // Reset position to bottom (hidden) WITHOUT transition
+                headlineElement.style.transition = 'none';
+                headlineElement.style.transform = 'translateY(20px)';
+
+                // Force reflow
+                void headlineElement.offsetWidth;
+
+                // Restore transition and slide in (to center)
+                headlineElement.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                headlineElement.style.transform = 'translateY(0)';
+                headlineElement.style.opacity = '1';
+
+            }, 500);
+        }
+
+        // Start rotation every 3.5 seconds
+        setInterval(rotateHeadline, 3500);
+    </script>
 </body>
 
 </html>
