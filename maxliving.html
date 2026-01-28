@@ -119,6 +119,51 @@
             display: inline-block;
         }
 
+        /* Cursor Effect */
+        #hero-headline::after {
+            content: '|';
+            animation: blinking 1s step-start infinite;
+            color: var(--secondary);
+        }
+
+        @keyframes blinking {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .logos {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                height: 40px !important;
+                /* Force smaller size on mobile */
+            }
+
+            /* Target specificity for the second logo inline style override */
+            .logos img:nth-of-type(2) {
+                height: 80px !important;
+            }
+
+            .hero {
+                padding: 3rem 0;
+                text-align: center;
+            }
+
+            .hero-grid {
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
         /* Form */
         .hero-form-wrapper {
             background: var(--white);
@@ -264,7 +309,7 @@
                     <span class="plus">+</span>
                     <!-- MaxLiving Logo -->
                     <img src="Images/MaxLiving/Maxliving Chiropractic Logo.png" alt="MaxLiving Logo" class="logo"
-                        style="height: 250px;">
+                        style="height: 250px;" id="maxliving-logo">
                 </div>
                 <h1 id="hero-headline">Generate over 500 reviews</h1>
                 <p class="hero-text">
@@ -342,35 +387,45 @@
         ];
 
         const headlineElement = document.getElementById('hero-headline');
-        let currentIndex = 0;
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
 
-        function rotateHeadline() {
-            // Slide out (up)
-            headlineElement.style.transform = 'translateY(-20px)';
-            headlineElement.style.opacity = '0';
+        function typeWriter() {
+            const currentPhrase = headlines[phraseIndex];
 
-            setTimeout(() => {
-                // Change text
-                currentIndex = (currentIndex + 1) % headlines.length;
-                headlineElement.textContent = headlines[currentIndex];
+            if (isDeleting) {
+                // Deleting
+                headlineElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50; // Faster deletion
+            } else {
+                // Typing
+                headlineElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100; // Normal typing
+            }
 
-                // Reset position to bottom (hidden) WITHOUT transition
-                headlineElement.style.transition = 'none';
-                headlineElement.style.transform = 'translateY(20px)';
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                // Finished typing phrase, pause before deleting
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                // Finished deleting, move to next phrase
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % headlines.length;
+                typeSpeed = 500; // Pause before typing new
+            }
 
-                // Force reflow
-                void headlineElement.offsetWidth;
-
-                // Restore transition and slide in (to center)
-                headlineElement.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
-                headlineElement.style.transform = 'translateY(0)';
-                headlineElement.style.opacity = '1';
-
-            }, 500);
+            setTimeout(typeWriter, typeSpeed);
         }
 
-        // Start rotation every 3.5 seconds
-        setInterval(rotateHeadline, 3500);
+        // Start typing loop
+        document.addEventListener('DOMContentLoaded', () => {
+            headlineElement.textContent = '';
+            typeWriter();
+        });
     </script>
 </body>
 
