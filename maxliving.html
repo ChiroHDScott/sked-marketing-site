@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKED + MaxLiving Partnership</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00AEEF;
+            /* SKED Blue approximation */
+            --secondary: #003366;
+            /* MaxLiving Blue approximation */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 0.5rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .hero-content {
+            z-index: 10;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .plus {
+            font-size: 2rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        /* Form */
+        .hero-form-wrapper {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e5e7eb;
+        }
+
+        .hero-form-wrapper h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: var(--radius);
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #009acD;
+        }
+
+        /* Infographic Section */
+        .section-infographic {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+
+        .infographic-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Section */
+        .section-features {
+            background-color: var(--bg-light);
+            padding: 5rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature-caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Testimonials Section */
+        .section-testimonials {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .testimonials-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="logos">
+                    <!-- SKED Logo -->
+                    <img src="sked_logo.png" alt="SKED Logo" class="logo" style="height: 60px;">
+                    <span class="plus">+</span>
+                    <!-- MaxLiving Logo -->
+                    <img src="Images/MaxLiving/Maxliving Chiropractic Logo.png" alt="MaxLiving Logo" class="logo"
+                        style="height: 250px;">
+                </div>
+                <h1>The Future of Practice Management is Here</h1>
+                <p class="hero-text">
+                    SKED simplifies your practice management with automated scheduling, patient reminders, and seamless
+                    intake flows. Empower your team to focus on care while SKED handles the logistics, reducing no-shows
+                    and increasing patient retention. Experience the synergy of SKED and MaxLiving today.
+                </p>
+            </div>
+            <div class="hero-form-wrapper">
+
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                    hbspt.forms.create({
+                        portalId: "7120555",
+                        formId: "3a0eb2c4-e895-4b53-bf75-bced7460f6d7",
+                        region: "na1"
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section class="section-infographic">
+        <div class="container">
+            <h2 class="section-title">Why Top Clinics Choice SKED</h2>
+            <img src="Images/SKED Infographic.webp" alt="SKED Infographic" class="infographic-img">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-features">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Powerful Features in Action</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="Images/New Patient Portal.gif" alt="New Patient Portal" class="feature-img">
+                    <div class="feature-caption">Seamless New Patient Portal</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Patient Scheduling App.gif" alt="Patient Scheduling App" class="feature-img">
+                    <div class="feature-caption">Easy Patient Scheduling</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Reactivation Campaigns.gif" alt="Reactivation Campaigns" class="feature-img">
+                    <div class="feature-caption">Automated Reactivation Campaigns</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Smart Reply.gif" alt="Smart Reply" class="feature-img">
+                    <div class="feature-caption">Intelligent Smart Reply</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <img src="Images/Testimonials.webp" alt="Testimonials" class="testimonials-img">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SKED. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
