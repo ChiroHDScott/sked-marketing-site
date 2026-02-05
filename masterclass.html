@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Your Practice: The Night Vision Masterclass | SKED</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS & SKED Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sked: {
+                            blue: '#009ADC',
+                            dark: '#0B1120',
+                            darker: '#020617',
+                            light: '#E0F2FE',
+                            accent: '#38BDF8',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)',
+                        'glow': 'conic-gradient(from 90deg at 50% 50%, #009ADC 0%, #38BDF8 50%, #009ADC 100%)'
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 154, 220, 0.15)',
+                        'glow-blue': '0 0 20px rgba(0, 154, 220, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #009ADC, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- Minimal Header -->
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-20">
+                <img src="./sked_logo.png" alt="SKED Logo" class="h-8 md:h-10 w-auto">
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="relative bg-hero-gradient pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
+
+                    <!-- Left Column: Copy -->
+                    <div class="lg:col-span-7 mb-12 lg:mb-0 pt-4">
+                        <div
+                            class="inline-flex items-center px-4 py-2 rounded-full border border-sked-blue/30 bg-white/80 backdrop-blur-sm text-sked-blue text-xs font-bold tracking-wide uppercase mb-8 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-sked-blue mr-2 animate-pulse"></span>
+                            Live Masterclass
+                        </div>
+
+                        <h1
+                            class="text-5xl lg:text-6xl xl:text-7xl font-heading font-extrabold leading-none mb-6 text-slate-900 tracking-tight">
+                            Transform Your Practice <br>
+                            from <span class="text-gradient">Chaos to Clarity.</span>
+                        </h1>
+
+                        <p class="text-2xl font-medium text-slate-800 mb-6 font-heading">
+                            The "Night Vision" Masterclass: Metrics-Driven Success.
+                        </p>
+
+                        <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
+                            In this exclusive session, discover why traditional chiropractic business models are failing
+                            and how to implement the metrics that matter. It's time to stop flying blind and turn the
+                            lights on in your business.
+                        </p>
+
+
+
+                        <!-- Video/Graphic Placeholder (Moved Up) -->
+                        <div
+                            class="bg-gray-900 rounded-2xl aspect-video w-full max-w-xl flex items-center justify-center shadow-xl border border-gray-800 mb-10 overflow-hidden relative group">
+                            <div
+                                class="absolute inset-0 bg-glow opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            </div>
+                            <div class="text-center z-10 p-6">
+                                <h3 class="text-3xl font-heading font-bold text-white tracking-widest uppercase mb-2">
+                                    Data Over Drama</h3>
+                                <div class="w-12 h-1 bg-sked-blue mx-auto rounded-full"></div>
+                                <p class="text-gray-400 text-sm mt-3 font-mono">Video Placeholder</p>
+                            </div>
+                        </div>
+
+                        <!-- What You'll Discover (Moved Up) -->
+                        <div class="mb-12">
+                            <h3 class="font-heading font-bold text-slate-900 mb-6 text-xl flex items-center">
+                                <span
+                                    class="bg-sked-blue/10 text-sked-blue w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-lg">💡</span>
+                                What You'll Discover:
+                            </h3>
+                            <ul class="space-y-6">
+                                <li class="flex items-start group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg"><strong>The "Night Vision" Strategy:</strong>
+                                        How to use 5 key metrics to see exactly where your business is <span
+                                            class="text-red-500 font-semibold">leaking profit</span>.</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg"><strong>The PPFG Framework:</strong> The secret
+                                        to getting your team 100% aligned with your growth goals.</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg"><strong>Practice vs. Business:</strong> Why
+                                        your clinical success might be the very thing stopping your business from
+                                        scaling.</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg"><strong>The 6:1 Ratio:</strong> The industry
+                                        standard for marketing ROI that most clinics are missing.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Intro/Speakers -->
+                        <div
+                            class="flex items-center space-x-4 mb-8 bg-white/50 p-4 rounded-xl border border-sked-blue/10 inline-flex">
+                            <div class="flex -space-x-2">
+                                <div class="w-10 h-10 rounded-full bg-slate-300 border-2 border-white"></div>
+                                <div class="w-10 h-10 rounded-full bg-slate-300 border-2 border-white"></div>
+                            </div>
+                            <p class="text-sm text-slate-600">
+                                Join <strong>Dr. Eric Kowalke</strong> and <strong>Dr. Stephen Franson</strong> safely
+                                behind the curtain.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Form (Sticky) -->
+                    <div class="lg:col-span-5 relative lg:sticky lg:top-32">
+                        <!-- Decorative Blob -->
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-sked-blue to-sked-accent rounded-3xl blur opacity-30">
+                        </div>
+
+                        <div
+                            class="relative bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/50 ring-1 ring-black/5">
+                            <div
+                                class="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-xs shadow-lg transform rotate-3">
+                                SEATS FILLING FAST
+                            </div>
+                            <h3 class="text-3xl font-heading font-bold text-slate-900 mb-2">Save Your Spot</h3>
+                            <p class="text-slate-500 mb-6 text-sm">Limited seats available for this live session.</p>
+
+                            <form action="#" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full
+                                        Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sked-blue focus:ring-2 focus:ring-sked-blue/20 outline-none transition-all"
+                                        placeholder="Dr. John Doe">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sked-blue focus:ring-2 focus:ring-sked-blue/20 outline-none transition-all"
+                                        placeholder="doctor@clinic.com">
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Mobile
+                                        Phone (for reminders)</label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sked-blue focus:ring-2 focus:ring-sked-blue/20 outline-none transition-all"
+                                        placeholder="(555) 123-4567">
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-sked-blue hover:bg-sky-600 text-white font-bold py-4 rounded-lg shadow-lg shadow-sked-blue/30 transform hover:-translate-y-0.5 transition-all duration-200 text-lg mt-2">
+                                    REGISTER FOR THE MASTERCLASS
+                                </button>
+
+                                <p class="text-xs text-center text-slate-400 mt-4">
+                                    By registering, you agree to receive event updates. We respect your privacy.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- "What You'll Discover" Section -->
+        <section class="bg-white py-20 border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">What You'll Discover</h2>
+                    <div class="w-20 h-1 bg-sked-blue mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="flex items-start p-6 rounded-xl hover:bg-slate-50 transition-colors">
+                        <div class="flex-shrink-0 mt-1">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sked-light flex items-center justify-center text-sked-blue">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">The "Night Vision" Strategy</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">How to use 5 key metrics to see exactly
+                                where your business is leaking profit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-start p-6 rounded-xl hover:bg-slate-50 transition-colors">
+                        <div class="flex-shrink-0 mt-1">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sked-light flex items-center justify-center text-sked-blue">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">The PPFG Framework</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">The secret to getting your team 100%
+                                aligned with your growth goals (without "yelling louder").</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-start p-6 rounded-xl hover:bg-slate-50 transition-colors">
+                        <div class="flex-shrink-0 mt-1">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sked-light flex items-center justify-center text-sked-blue">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Practice vs. Business</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Why your clinical success might be the
+                                very thing stopping your business from scaling.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-start p-6 rounded-xl hover:bg-slate-50 transition-colors">
+                        <div class="flex-shrink-0 mt-1">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sked-light flex items-center justify-center text-sked-blue">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">The 6:1 Ratio</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">The industry standard for marketing ROI
+                                that most clinics are missing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center p-8 bg-slate-50 rounded-2xl border border-slate-200">
+                    <p class="text-xl font-heading font-bold text-slate-900 mb-2">The Result?</p>
+                    <p class="text-lg text-sked-blue font-medium">High data. Low drama. More profit. Less stress.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer with Urgency Note -->
+    <footer class="bg-sked-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:justify-between lg:items-center">
+                <div class="mb-8 lg:mb-0">
+                    <img src="./sked_logo.png" alt="SKED Logo" class="h-8 w-auto brightness-0 invert opacity-80 mb-4">
+                    <p class="text-slate-400 text-sm">© 2025 SKED. All rights reserved.</p>
+                </div>
+
+                <div class="max-w-lg bg-sked-darker p-6 rounded-xl border border-slate-800 ml-auto">
+                    <div class="flex items-start">
+                        <div class="text-yellow-400 mr-3 text-2xl">🎟️</div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1 text-sm uppercase tracking-wide">Golden Ticket
+                                Opportunity</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Learn about the "Golden Ticket" opportunity mentioned in the session—a chance to join
+                                the <strong>Remarkable Business Immersion</strong> live in Phoenix this March!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
