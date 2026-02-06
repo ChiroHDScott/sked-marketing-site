@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKED + The Remarkable Practice Partnership</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00AEEF;
+            /* SKED Blue approximation */
+            --secondary: #003366;
+            /* MaxLiving Blue approximation - Keeping same for now as requested 'looks like' */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 0.5rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            /* Subtle 'spine/structure' geometric pattern */
+            background-image: radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .hero-content {
+            z-index: 10;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            transform: translateY(-70px);
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .plus {
+            font-size: 2rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        /* Rotating Text Styles */
+        #hero-headline {
+            min-height: 1.2em;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            opacity: 1;
+            transform: translateY(0);
+            display: inline-block;
+        }
+
+        /* Cursor Effect */
+        #hero-headline::after {
+            content: '|';
+            animation: blinking 1s step-start infinite;
+            color: var(--secondary);
+        }
+
+        @keyframes blinking {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .logos {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                height: 40px !important;
+                /* Force smaller size on mobile */
+            }
+
+            /* Target specificity for the second logo inline style override */
+            .logos img:nth-of-type(2) {
+                height: 60px !important;
+            }
+
+            .hero {
+                padding: 3rem 0;
+                text-align: center;
+            }
+
+            .hero-grid {
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Form */
+        .hero-form-wrapper {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e5e7eb;
+        }
+
+        .hero-form-wrapper h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: var(--radius);
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #009acD;
+        }
+
+        /* Infographic Section */
+        .section-infographic {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+
+        .infographic-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Section */
+        .section-features {
+            background-color: var(--bg-light);
+            padding: 5rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature-caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Testimonials Section */
+        .section-testimonials {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .testimonials-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="logos">
+                    <!-- SKED Logo -->
+                    <img src="sked_logo.png" alt="SKED Logo" class="logo" style="height: 60px;">
+                    <span class="plus">+</span>
+                    <!-- The Remarkable Practice Logo -->
+                    <img src="https://cdn.prod.website-files.com/640bef7e714c5a171f61c3b9/691fd2c9e60438c4f4e0de87_REM_TMlogo_60W.svg"
+                        alt="The Remarkable Practice Logo" class="logo" style="height: 60px;"
+                        id="remarkable-practice-logo">
+                </div>
+                <h1 id="hero-headline">Generate over 500 reviews</h1>
+                <p class="hero-text">
+                    SKED simplifies your practice management with automated scheduling, patient reminders, and seamless
+                    intake flows. Empower your team to focus on care while SKED handles the logistics, reducing no-shows
+                    and increasing patient retention. Experience the synergy of SKED and The Remarkable Practice today.
+                </p>
+            </div>
+            <div class="hero-form-wrapper">
+
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                    hbspt.forms.create({
+                        portalId: "7120555",
+                        formId: "198cf609-ed27-4c97-980b-f07149e56f6e",
+                        region: "na1"
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section class="section-infographic">
+        <div class="container">
+            <h2 class="section-title">Why Top Clinics Choice SKED</h2>
+            <img src="Images/SKED Infographic.webp" alt="SKED Infographic" class="infographic-img">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-features">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Powerful Features in Action</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="Images/New Patient Portal.gif" alt="New Patient Portal" class="feature-img">
+                    <div class="feature-caption">Seamless New Patient Portal</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Patient Scheduling App.gif" alt="Patient Scheduling App" class="feature-img">
+                    <div class="feature-caption">Easy Patient Scheduling</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Reactivation Campaigns.gif" alt="Reactivation Campaigns" class="feature-img">
+                    <div class="feature-caption">Automated Reactivation Campaigns</div>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/Smart Reply.gif" alt="Smart Reply" class="feature-img">
+                    <div class="feature-caption">Intelligent Smart Reply</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <img src="Images/Testimonials.webp" alt="Testimonials" class="testimonials-img">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SKED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const headlines = [
+            "Generate over 500 reviews",
+            "Increase your show up rate",
+            "Let patients manage their appointments"
+        ];
+
+        const headlineElement = document.getElementById('hero-headline');
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function typeWriter() {
+            const currentPhrase = headlines[phraseIndex];
+
+            if (isDeleting) {
+                // Deleting
+                headlineElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50; // Faster deletion
+            } else {
+                // Typing
+                headlineElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100; // Normal typing
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                // Finished typing phrase, pause before deleting
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                // Finished deleting, move to next phrase
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % headlines.length;
+                typeSpeed = 500; // Pause before typing new
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typing loop
+        document.addEventListener('DOMContentLoaded', () => {
+            headlineElement.textContent = '';
+            typeWriter();
+        });
+    </script>
+</body>
+
+</html>
