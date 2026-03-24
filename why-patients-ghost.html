@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Patients Ghost Your Clinic (And What You Can Do About It) | SKED</title>
+    <meta name="description" content="Patient ghosting costs the average chiropractic clinic $7,200+ per month. Learn why patients disappear mid-care and how automation brings them back.">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KSZRMH2T');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10947408779"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-10947408779');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '142763714514798');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=142763714514798&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js.hs-scripts.com/7120555.js?businessUnitId=2910837"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS & SKED Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sked: {
+                            blue: '#009ADC',
+                            dark: '#0B1120',
+                            darker: '#020617',
+                            light: '#E0F2FE',
+                            accent: '#38BDF8',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)',
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 154, 220, 0.15)',
+                        'glow-blue': '0 0 20px rgba(0, 154, 220, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #009ADC, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Article prose styles */
+        .prose-article p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .prose-article h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0F172A;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .prose-article h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: #009ADC;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-article ol {
+            counter-reset: list-counter;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-article ol li {
+            counter-increment: list-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .prose-article ol li::before {
+            content: counter(list-counter);
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            width: 1.75rem;
+            height: 1.75rem;
+            background: #E0F2FE;
+            color: #009ADC;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .prose-article ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-article ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .prose-article ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 0.375rem;
+            height: 0.375rem;
+            background: #009ADC;
+            border-radius: 50%;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid #E2E8F0;
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSZRMH2T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="https://sked.life">
+                    <img src="./sked_logo.png" alt="SKED Logo" class="h-8 md:h-10 w-auto">
+                </a>
+                <a href="https://sked.life/request-demo/"
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-sked-blue hover:bg-sky-600 transition-colors shadow-sm">
+                    Request Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+
+        <!-- Hero -->
+        <section class="bg-hero-gradient pt-16 pb-12 lg:pt-20 lg:pb-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-sked-blue/30 bg-white/80 text-sked-blue text-xs font-bold tracking-wide uppercase mb-6 shadow-sm">
+                    Practice Growth
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-heading font-extrabold leading-tight text-slate-900 tracking-tight mb-5">
+                    Why Patients Ghost Your Clinic <span class="text-gradient">(And What You Can Do About It)</span>
+                </h1>
+                <p class="text-xl font-medium text-slate-600 leading-relaxed mb-8">
+                    The Silent Revenue Leak That Could Cost You More Than $7k Each Month
+                </p>
+                <img src="./Images/Ghosting blog.png" alt="Why Patients Ghost Your Clinic"
+                    class="w-full rounded-2xl shadow-soft border border-slate-200">
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <article class="py-12 lg:py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose-article">
+
+                <p>Your patient experience shouldn't end when patients walk out the door. What happens between visits determines whether they complete care or disappear.</p>
+
+                <p>While clinical expertise gets patients into the office, operational consistency keeps them coming back. Almost every chiropractor has felt the sting of the ghosted appointment&mdash;the patient who starts with enthusiasm, misses a Tuesday, and vanishes forever.</p>
+
+                <p>Patient ghosting represents one of the most significant hurdles to practice scaling. When a patient disappears before completing their care plan, clinics lose both revenue from incomplete care plans and the marketing dollars spent acquiring them.</p>
+
+                <p>In this blog, we explore why patients really drift away and how high-performing practices use automation to reactivate their care.</p>
+
+                <!-- Inline CTA -->
+                <a href="https://sked.life/reduce-patient-no-shows/" target="_blank" rel="noopener"
+                    class="flex items-center gap-5 bg-sked-light border border-sked-blue/20 rounded-xl px-5 py-4 my-8 group hover:bg-sked-blue/10 transition-colors no-underline">
+                    <!-- Checklist preview with blur on body copy -->
+                    <div class="flex-shrink-0 relative w-16 h-20 rounded-lg overflow-hidden shadow-md border border-slate-200">
+                        <img src="./Images/No Show Preview.png" alt="13 Ways to Reduce No-Shows checklist preview"
+                            class="w-full h-full object-cover object-top">
+                        <!-- Blur overlay covering roughly the lower 60% where body copy lives -->
+                        <div class="absolute inset-x-0 bottom-0 h-3/5 bg-white/10" style="backdrop-filter: blur(2px);"></div>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="text-xs font-bold uppercase tracking-wide text-sked-blue mb-0.5">Free Download</p>
+                        <p class="font-heading font-bold text-slate-900 text-sm group-hover:text-sked-blue transition-colors">13 Ways to Reduce Patient No-Shows</p>
+                    </div>
+                    <svg class="w-4 h-4 text-sked-blue ml-auto flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+
+                <hr class="section-divider">
+
+                <h2>The Top Three Reasons Patients Ghost Appointments</h2>
+
+                <p>Most clinicians assume patients stop coming because they don't value their health. The data tells a different story.</p>
+
+                <p>Patients don't reject their chiropractor&mdash;they react to broken systems. They lead busy, digitally-driven lives where convenience determines follow-through. When practices rely on manual processes, three critical barriers emerge that push patients away:</p>
+
+                <ol>
+                    <li>
+                        <strong>Barriers to Re-entry:</strong> Phone-only scheduling, long hold times, and complicated rescheduling processes make patients abandon care. When confirming or rescheduling requires a phone call during business hours, many patients simply don't follow through. Add to that the reality that most practices have hundreds of dormant patients in their database with no systematic way to reconnect, and the retention gap widens. Without automated outreach, no one follows up, no one reconnects, and those patients never return.
+                    </li>
+                    <li>
+                        <strong>Vanishing Momentum:</strong> Without consistent touchpoints between visits, patients lose track of appointments and stop prioritizing care. Life gets busy, and without digital reinforcement, appointments fall off the mental radar. Once acute pain subsides, patients feel better and lose the immediate &ldquo;why&rdquo; for their next visit. If patients only hear from your clinic when they show up, they disconnect from their care plan.
+                    </li>
+                    <li>
+                        <strong>Manual Outreach Friction:</strong> Seventy percent of clinics report staff feeling overwhelmed at least sometimes. Your team juggles scheduling, insurance verification, check-ins, and patient coordination while also trying to call no-shows, follow up with inactive patients, and send reminders. Reality: it doesn't always happen. When patients miss visits, they feel awkward about returning&mdash;they worry the staff will be frustrated or that too much time has passed. Without proactive, no-guilt outreach that happens automatically, that patient stays gone forever.
+                    </li>
+                </ol>
+
+                <hr class="section-divider">
+
+                <h2>The Hidden Cost of Patient Ghosting</h2>
+
+                <p>A ghosted patient costs you far more than a single missed adjustment. Every patient who disappears mid-treatment represents lost revenue from their incomplete care plan.</p>
+
+                <p>If a clinic loses just 10 ghosted patients per month, and each patient was scheduled for a 12-visit care plan at $60 per visit, that represents <strong>$7,200+ in lost monthly revenue</strong>. Beyond the lost marketing spend, this creates a ripple effect of unused appointment slots and reactive administrative work that pulls the team away from active patient care.</p>
+
+                <p>Patient ghosting compounds invisibly; you work harder to acquire new patients while existing ones slip away. High-performing clinics recognize that retaining an existing patient costs significantly less than acquiring a new one. They shift their focus from <em>more leads</em> to <em>better systems</em>, ensuring that every patient who enters the practice has a clear path to completing their care.</p>
+
+                <hr class="section-divider">
+
+                <h2>What High-Performing Clinics Do Differently</h2>
+
+                <p>Successful practices treat patient engagement like a system, not a manual task. They focus on three core strategies that dramatically reduce ghosting and increase care plan completion:</p>
+
+                <h3>Automated Appointment Reminders</h3>
+                <p>Text message reminders outperform phone calls and emails in both open rates and response rates. They're instant, convenient, and patients actually read them. Smart reminders reduce no-shows dramatically because patients receive timely nudges without requiring any staff involvement.</p>
+
+                <h3>Easy Rescheduling and Self-Booking</h3>
+                <p>Patients want to confirm, cancel, or rebook appointments without calling the office during business hours. High-performing practices offer:</p>
+                <ul>
+                    <li>Mobile-friendly self-scheduling available 24/7</li>
+                    <li>One-tap confirmation links sent via text</li>
+                    <li>Easy rescheduling options that don't require phone calls</li>
+                </ul>
+                <p>Removing obstacles from the booking process keeps patients engaged and schedules full.</p>
+
+                <h3>Automated Reactivation Campaigns</h3>
+                <p>Top clinics automatically reconnect with missed appointments, inactive patients who haven't been seen in 60+ days, and patients with unfinished care plans who stopped showing up. These systems bring patients back into care without requiring any front desk time or manual follow-up.</p>
+
+                <hr class="section-divider">
+
+                <h2>What This Looks Like in Practice</h2>
+
+                <p>Here's how patient retention changes when you replace manual follow-up with automation:</p>
+
+                <!-- Side-by-side comparison -->
+                <div class="grid sm:grid-cols-2 gap-4 my-8 not-prose">
+                    <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+                        <p class="font-heading font-bold text-slate-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </span>
+                            The Old Way
+                        </p>
+                        <ol class="space-y-2 text-sm text-slate-600" style="list-style:none;padding:0;counter-reset:none;">
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">1.</span> Patient misses appointment</li>
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">2.</span> Front desk notices during afternoon checkout rush</li>
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">3.</span> CA adds &ldquo;call patient later&rdquo; to mental task list</li>
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">4.</span> Gets pulled into other priorities, forgets to call</li>
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">5.</span> Patient never reschedules and quietly becomes inactive</li>
+                            <li class="flex gap-2"><span class="text-red-400 font-bold flex-shrink-0">6.</span> Three months later, practice realizes they haven't seen that patient</li>
+                        </ol>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-xl p-6">
+                        <p class="font-heading font-bold text-slate-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </span>
+                            The Automated Way
+                        </p>
+                        <ol class="space-y-2 text-sm text-slate-600" style="list-style:none;padding:0;counter-reset:none;">
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">1.</span> Patient misses appointment</li>
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">2.</span> System immediately sends text: &ldquo;We missed you today! Tap here to reschedule.&rdquo;</li>
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">3.</span> Patient reschedules in 30 seconds or ignores the message</li>
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">4.</span> If no response, system sends gentle follow-up 24 hours later</li>
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">5.</span> If still inactive after 60 days, automated reactivation campaign triggers</li>
+                            <li class="flex gap-2"><span class="text-green-600 font-bold flex-shrink-0">6.</span> Patient receives personalized message inviting them back to care</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Result callout -->
+                <div class="bg-sked-light border border-sked-blue/20 rounded-2xl p-6 lg:p-8 my-8 not-prose">
+                    <p class="font-heading font-bold text-sked-blue text-sm uppercase tracking-wide mb-3">The Result</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Practices using automated engagement systems see:</p>
+                    <ul class="grid sm:grid-cols-2 gap-3">
+                        <li class="flex items-center gap-2 text-sm text-slate-800">
+                            <svg class="w-4 h-4 text-sked-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Up to 50% reduction in no-shows
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-800">
+                            <svg class="w-4 h-4 text-sked-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            More completed care plans
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-800">
+                            <svg class="w-4 h-4 text-sked-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Higher patient lifetime value
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-800">
+                            <svg class="w-4 h-4 text-sked-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Zero manual follow-up from front desk
+                        </li>
+                    </ul>
+                    <p class="text-slate-500 text-sm mt-4">The system runs whether your front desk is slammed or fully staffed. Patient engagement happens consistently, predictably, and without adding to your team's workload.</p>
+                </div>
+
+                <hr class="section-divider">
+
+                <h2>A System for Seamless Retention</h2>
+
+                <p>The path to 90%+ care plan compliance requires a process that runs independently of daily clinic chaos.</p>
+
+                <p>SKED's automated engagement platform addresses the ghosting problem by removing human error from the equation. Here's how the system works:</p>
+
+                <h3>Instant Missed-Appointment Alerts</h3>
+                <p>When a patient misses an appointment, the system triggers an immediate, supportive text. This bridges the guilt gap instantly, inviting the patient back onto the schedule before the hesitation to return sets in.</p>
+
+                <h3>Two-Way Mobile Scheduling</h3>
+                <p>Patients manage their care journey directly through the SKED app. By putting scheduling into the patient's hands, you eliminate the barrier that often leads to permanent drop-off.</p>
+
+                <h3>Automated Reactivation Campaigns</h3>
+                <p>SKED identifies dormant patients and delivers personalized, automated outreach. This transforms an inactive database into a consistent stream of appointments without increasing marketing budget.</p>
+
+                <p>This system allows the team to remain fully present with the patient in the room. By operating quietly in the background, SKED ensures that clinical momentum continues and no patient falls through the cracks, no matter how busy the front desk becomes.</p>
+
+                <hr class="section-divider">
+
+                <h2>Reclaiming Your Patient Momentum</h2>
+
+                <p>Your practice deserves to see the clinical results of every care plan you prescribe. When you solve the ghosting problem, you don't just protect your revenue&mdash;you ensure your patients actually get the help they came for.</p>
+
+                <p>Make the path of least resistance lead directly back to your office. When returning to care feels as easy as ordering groceries from their phone, patients complete their treatment plans.</p>
+
+            </div>
+        </article>
+
+        <!-- Final CTA -->
+        <section class="bg-sked-dark py-16 lg:py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-sked-accent font-bold text-sm uppercase tracking-widest mb-4">Ready to reclaim your practice momentum?</p>
+                <h2 class="text-3xl lg:text-4xl font-heading font-extrabold text-white mb-6 leading-tight">
+                    Explore How SKED Automates the<br class="hidden lg:block"> Entire Patient Journey
+                </h2>
+                <p class="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
+                    See how chiropractic practices use SKED to reduce no-shows, reactivate patients, and keep schedules full &mdash; automatically.
+                </p>
+                <a href="https://sked.life/request-demo/"
+                    class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl text-white bg-sked-blue hover:bg-sky-500 shadow-lg hover:shadow-glow-blue transition-all transform hover:-translate-y-0.5">
+                    See SKED in Action
+                    <svg class="ml-2 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sked-darker text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+                <div>
+                    <img src="./sked_logo.png" alt="SKED Logo" class="h-8 w-auto brightness-0 invert opacity-80 mb-4">
+                    <p class="text-slate-400 text-sm">&copy; 2026 SKED. All rights reserved.</p>
+                </div>
+                <p class="text-slate-500 text-sm max-w-sm">
+                    Questions? Visit <a href="https://sked.life" class="text-sked-blue hover:text-sked-accent transition-colors">sked.life</a> to learn more.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
