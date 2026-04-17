@@ -7,6 +7,10 @@
     <title>[Training] The Secret to Growing Your Chiropractic Practice | SKED</title>
     <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
     <meta name="description" content="How Higher Health Chiropractic built a thriving patient base through community health talks — and how you can do the same. Free online training, Wednesday, April 29 at 1pm Eastern.">
+    <meta property="og:title" content="The Secret to Growing Your Chiropractic Practice — Free Online Training">
+    <meta property="og:description" content="How Higher Health Chiropractic built a thriving patient base through community health talks. Join us Wednesday, April 29 at 1pm Eastern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/health-talk-system.html">
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -182,6 +186,28 @@
             margin-bottom: 1rem;
         }
     </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "The Secret to Growing Your Chiropractic Practice",
+  "description": "How Higher Health Chiropractic built a thriving patient base through community health talks and how you can do the same.",
+  "startDate": "2026-04-29T13:00:00-04:00",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "url": "https://content.sked.life/health-talk-system.html",
+  "organizer": {
+    "@type": "Organization",
+    "name": "SKED",
+    "url": "https://sked.life"
+  },
+  "performer": [
+    { "@type": "Person", "name": "Dr. Erik Kowalke" },
+    { "@type": "Person", "name": "Jason Tolkkinen" }
+  ],
+  "isAccessibleForFree": true
+}
+</script>
 </head>
 
 <body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
@@ -356,6 +382,20 @@
         </div>
     </footer>
 
+<!-- UTM parameter retention -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const utmParams = new URLSearchParams();
+  utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+  if ([...utmParams].length) {
+    document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+      const url = new URL(a.href);
+      utmParams.forEach((v, k) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    });
+  }
+</script>
 </body>
 
 </html>

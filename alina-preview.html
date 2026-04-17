@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Alina - Your New Top Performer</title>
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
+    <meta property="og:title" content="Meet Alina — Your New Top Performer | SKED">
+    <meta property="og:description" content="See how SKED's automated patient engagement platform acts like a top-performing team member — handling reminders, reactivation, and scheduling around the clock.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/alina-preview.html">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
@@ -219,6 +225,21 @@
             </p>
         </div>
     </section>
+
+    <!-- UTM parameter retention -->
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+      const utmParams = new URLSearchParams();
+      utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+      if ([...utmParams].length) {
+        document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+          const url = new URL(a.href);
+          utmParams.forEach((v, k) => url.searchParams.set(k, v));
+          a.href = url.toString();
+        });
+      }
+    </script>
 
 </body>
 </html>

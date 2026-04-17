@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
     <title>Scale Your Practice: The Night Vision Masterclass | SKED</title>
+    <meta name="description" content="Learn how to scale your chiropractic practice with the Night Vision Masterclass. Discover proven strategies for patient engagement and practice growth.">
+    <meta property="og:title" content="Scale Your Practice: The Night Vision Masterclass | SKED">
+    <meta property="og:description" content="Learn how to scale your chiropractic practice with the Night Vision Masterclass. Discover proven strategies for patient engagement and practice growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/masterclass.html">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -382,6 +388,20 @@
         </div>
     </footer>
 
+<!-- UTM parameter retention -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const utmParams = new URLSearchParams();
+  utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+  if ([...utmParams].length) {
+    document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+      const url = new URL(a.href);
+      utmParams.forEach((v, k) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    });
+  }
+</script>
 </body>
 
 </html>

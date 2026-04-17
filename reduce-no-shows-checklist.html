@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
     <title>13 Ways to Reduce No-Shows in Your Chiropractic Practice | SKED</title>
     <meta name="description" content="Free checklist: 13 proven ways chiropractic practices reduce no-shows, protect revenue, and keep schedules full. Download instantly.">
+    <meta property="og:title" content="13 Ways to Reduce Patient No-Shows — Free Checklist for Chiropractic Practices">
+    <meta property="og:description" content="A practical checklist of strategies chiropractic practices can implement immediately to protect their schedule and reduce lost revenue from missed appointments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/reduce-no-shows-checklist.html">
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -121,6 +126,46 @@
             margin-top: 2px;
         }
     </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do chiropractic patients miss appointments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Patients most commonly miss appointments due to barriers like phone-only scheduling, lack of automated reminders, and losing momentum between visits. When life gets busy and there is no digital reinforcement, appointments fall off the mental radar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much revenue does a chiropractic practice lose to no-shows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a clinic loses just 10 patients per month before completing a 12-visit care plan at $60 per visit, that represents over $7,200 in lost monthly revenue — not counting the marketing spend already invested to acquire those patients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most effective way to reduce no-shows at a chiropractic clinic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automated text message reminders, easy self-scheduling options, and proactive reactivation campaigns are consistently the most effective strategies for reducing no-shows and keeping schedules full."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can SKED help reduce patient no-shows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SKED automates appointment reminders, enables two-way mobile scheduling, and runs reactivation campaigns for missed and inactive patients — all without requiring manual follow-up from front desk staff."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
@@ -252,6 +297,31 @@
             </div>
         </section>
 
+    <!-- FAQ Section -->
+    <section class="py-12 lg:py-16 bg-white border-t border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-heading font-semibold text-slate-900 mb-2">Why do chiropractic patients miss appointments?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Patients most commonly miss appointments due to barriers like phone-only scheduling, lack of automated reminders, and losing momentum between visits. When life gets busy and there is no digital reinforcement, appointments fall off the mental radar.</p>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-slate-900 mb-2">How much revenue does a chiropractic practice lose to no-shows?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">If a clinic loses just 10 patients per month before completing a 12-visit care plan at $60 per visit, that represents over $7,200 in lost monthly revenue &mdash; not counting the marketing spend already invested to acquire those patients.</p>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-slate-900 mb-2">What is the most effective way to reduce no-shows at a chiropractic clinic?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Automated text message reminders, easy self-scheduling options, and proactive reactivation campaigns are consistently the most effective strategies for reducing no-shows and keeping schedules full.</p>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-slate-900 mb-2">How can SKED help reduce patient no-shows?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">SKED automates appointment reminders, enables two-way mobile scheduling, and runs reactivation campaigns for missed and inactive patients &mdash; all without requiring manual follow-up from front desk staff.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <!-- Footer -->
@@ -269,6 +339,20 @@
         </div>
     </footer>
 
+<!-- UTM parameter retention -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const utmParams = new URLSearchParams();
+  utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+  if ([...utmParams].length) {
+    document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+      const url = new URL(a.href);
+      utmParams.forEach((v, k) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    });
+  }
+</script>
 </body>
 
 </html>

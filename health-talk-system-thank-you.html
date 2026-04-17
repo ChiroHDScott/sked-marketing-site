@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You're Registered! | The Secret to Growing Your Chiropractic Practice | SKED</title>
     <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
+    <meta property="og:title" content="You're Registered — The Secret to Growing Your Chiropractic Practice">
+    <meta property="og:description" content="Your spot is confirmed for April 29. Learn how to grow your practice through community health talks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/health-talk-system-thank-you.html">
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -212,6 +217,20 @@
         </div>
     </footer>
 
+<!-- UTM parameter retention -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const utmParams = new URLSearchParams();
+  utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+  if ([...utmParams].length) {
+    document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+      const url = new URL(a.href);
+      utmParams.forEach((v, k) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    });
+  }
+</script>
 </body>
 
 </html>

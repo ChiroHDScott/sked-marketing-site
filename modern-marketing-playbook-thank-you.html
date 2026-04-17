@@ -48,8 +48,14 @@
     <!-- End of HubSpot Embed Code -->
 
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
     <title>You're Registered! | The Modern Marketing Playbook Webinar | SKED</title>
+    <meta property="og:title" content="You're Registered — The Modern Marketing Playbook for Chiropractic Clinics">
+    <meta property="og:description" content="Your spot is confirmed. Learn how growth-focused chiropractic practices reduce no-shows and keep schedules full.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/modern-marketing-playbook-thank-you.html">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
@@ -169,6 +175,19 @@
                         See how SKED helps chiropractic clinics reduce no-shows, reactivate patients, and keep schedules
                         full &mdash; automatically.
                     </p>
+                    <!-- Gift card offer -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl px-5 py-4 mb-2 flex items-start gap-3 text-left max-w-md mx-auto">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center mt-0.5">
+                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">Get a $100 Amazon Gift Card</p>
+                            <p class="text-slate-600 text-sm">Mention this ad to your sales rep and get a <strong>$100 Amazon Gift Card</strong> when you complete a demonstration.</p>
+                            <p class="text-slate-400 text-xs mt-1">Offer applies to qualified chiropractic clinics.</p>
+                        </div>
+                    </div>
                     <a href="https://sked.life/request-demo/"
                         class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-sked-blue hover:bg-sky-600 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                         See SKED in Action
@@ -190,6 +209,21 @@
             </p>
         </div>
     </footer>
+
+<!-- UTM parameter retention -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const utmParams = new URLSearchParams();
+  utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+  if ([...utmParams].length) {
+    document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+      const url = new URL(a.href);
+      utmParams.forEach((v, k) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    });
+  }
+</script>
 </body>
 
 </html>

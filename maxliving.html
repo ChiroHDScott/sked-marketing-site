@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKED + MaxLiving Partnership</title>
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
+    <meta name="description" content="SKED partners with MaxLiving to help chiropractic clinics automate patient engagement, reduce no-shows, and grow their practice.">
+    <meta property="og:title" content="SKED + MaxLiving Partnership">
+    <meta property="og:description" content="SKED partners with MaxLiving to help chiropractic clinics automate patient engagement, reduce no-shows, and grow their practice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/maxliving.html">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -426,6 +432,21 @@
             headlineElement.textContent = '';
             typeWriter();
         });
+    </script>
+
+    <!-- UTM parameter retention -->
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+      const utmParams = new URLSearchParams();
+      utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
+      if ([...utmParams].length) {
+        document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+          const url = new URL(a.href);
+          utmParams.forEach((v, k) => url.searchParams.set(k, v));
+          a.href = url.toString();
+        });
+      }
     </script>
 </body>
 
