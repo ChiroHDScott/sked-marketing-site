@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip Campaigns — Automate Your Patient Journey | SKED</title>
+    <meta name="description" content="SKED's milestone-driven drip campaigns deliver the right message at the exact right moment in your patient's healing journey. Reduce no-shows by up to 50%.">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KSZRMH2T');</script>
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10947408779"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-10947408779');</script>
+
+    <!-- Meta Pixel -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','142763714514798');fbq('track','PageView');</script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=142763714514798&ev=PageView&noscript=1"/></noscript>
+
+    <!-- HubSpot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7120555.js?businessUnitId=2910837"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sked: {
+                            blue: '#009ADC',
+                            dark: '#0B1120',
+                            darker: '#020617',
+                            light: '#E0F2FE',
+                            accent: '#38BDF8',
+                        }
+                    },
+                    animation: {
+                        'float':    'float 5s ease-in-out infinite',
+                        'orb':      'orbDrift 18s ease-in-out infinite',
+                        'orb2':     'orbDrift 24s ease-in-out 6s infinite',
+                        'orb3':     'orbDrift 20s ease-in-out 3s infinite',
+                        'shimmer':  'shimmer 4s ease infinite',
+                    },
+                    keyframes: {
+                        float:    { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-16px)' } },
+                        orbDrift: { '0%,100%': { transform: 'translate(0,0) scale(1)' }, '33%': { transform: 'translate(40px,-40px) scale(1.08)' }, '66%': { transform: 'translate(-25px,25px) scale(0.96)' } },
+                        shimmer:  { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            background: #020617;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #009ADC 0%, #38BDF8 50%, #10B981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #009ADC, #38BDF8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-warn {
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.09);
+        }
+        .glass-header {
+            background: rgba(2,6,23,0.88);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .dot-grid {
+            background-image: radial-gradient(circle, rgba(0,154,220,0.22) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        /* Video */
+        .video-wrap {
+            position: relative;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, #009ADC, #0284c7, #38BDF8, #10B981, #009ADC);
+            background-size: 300% 300%;
+            animation: shimmer 4s ease infinite;
+        }
+        .video-inner {
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+
+        /* Cards */
+        .stat-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            transition: background 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .stat-card:hover {
+            background: rgba(0,154,220,0.08);
+            border-color: rgba(0,154,220,0.3);
+            transform: translateY(-4px);
+        }
+
+        .problem-card {
+            background: rgba(239,68,68,0.04);
+            border: 1px solid rgba(239,68,68,0.14);
+            border-radius: 20px;
+            transition: background 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .problem-card:hover {
+            background: rgba(239,68,68,0.07);
+            border-color: rgba(239,68,68,0.28);
+            transform: translateY(-4px);
+        }
+
+        .feat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .feat-card:hover {
+            transform: translateY(-6px);
+            background: rgba(0,154,220,0.05);
+            border-color: rgba(0,154,220,0.32);
+            box-shadow: 0 24px 48px -12px rgba(0,154,220,0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #009ADC 0%, #0073a5 100%);
+            box-shadow: 0 8px 24px -6px rgba(0,154,220,0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 40px -8px rgba(0,154,220,0.55);
+        }
+
+        /* Milestone journey */
+        .milestone-dot {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.875rem;
+            background: rgba(0,154,220,0.1);
+            border: 2px solid rgba(0,154,220,0.35);
+            color: #38BDF8;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .milestone-dot:hover { background: rgba(0,154,220,0.22); transform: scale(1.1); }
+        .milestone-dot.active {
+            background: rgba(0,154,220,0.2);
+            border-color: #009ADC;
+        }
+        .milestone-dot.success {
+            background: rgba(16,185,129,0.14);
+            border-color: rgba(16,185,129,0.5);
+            color: #10B981;
+        }
+        .milestone-dot.success:hover { background: rgba(16,185,129,0.25); }
+
+        .flow-line {
+            flex: 1;
+            height: 2px;
+            min-width: 20px;
+            background: linear-gradient(90deg, rgba(0,154,220,0.4), rgba(56,189,248,0.25), rgba(0,154,220,0.4));
+            position: relative;
+            overflow: hidden;
+        }
+        .flow-line::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(56,189,248,0.8), transparent);
+            animation: flowPulse 2.5s linear infinite;
+        }
+        @keyframes flowPulse {
+            0%   { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        .proof-card {
+            background: linear-gradient(135deg, rgba(0,154,220,0.07) 0%, rgba(16,185,129,0.04) 100%);
+            border: 1px solid rgba(0,154,220,0.18);
+            border-radius: 24px;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #009ADC; border-radius: 2px; }
+    </style>
+</head>
+
+<body class="antialiased font-sans">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSZRMH2T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════ -->
+<header class="glass-header fixed top-0 inset-x-0 z-50 h-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        <a href="https://sked.life">
+            <img src="./sked_logo.png" alt="SKED" class="h-7 w-auto brightness-0 invert opacity-80">
+        </a>
+        <a href="https://sked.life/contact/"
+            class="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-lg font-heading font-semibold text-white text-sm">
+            Contact Sales
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 overflow-hidden"
+    style="background: radial-gradient(ellipse at 30% 0%, #003d5c 0%, #001a2e 35%, #020617 65%);">
+
+    <!-- Background orbs -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full opacity-10 animate-orb"
+            style="background: radial-gradient(circle, #009ADC, transparent 70%);"></div>
+        <div class="absolute bottom-[-10%] right-[-8%] w-[500px] h-[500px] rounded-full opacity-10 animate-orb2"
+            style="background: radial-gradient(circle, #10B981, transparent 70%);"></div>
+        <div class="absolute top-[40%] right-[5%] w-[320px] h-[320px] rounded-full opacity-5 animate-orb3"
+            style="background: radial-gradient(circle, #38BDF8, transparent 70%);"></div>
+    </div>
+    <div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+    <div class="absolute top-0 inset-x-0 h-px" style="background: linear-gradient(90deg, transparent, #009ADC, #38BDF8, #009ADC, transparent);"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full glass mb-10"
+            style="border: 1px solid rgba(0,154,220,0.35);">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background:#009ADC;"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2" style="background:#009ADC;"></span>
+            </span>
+            <span class="text-xs font-semibold tracking-widest uppercase" style="color: #38BDF8;">Milestone-Driven Patient Automation</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-heading font-black leading-none tracking-tight mb-6"
+            style="font-size: clamp(2.8rem, 7.5vw, 6.5rem);">
+            Stop Guessing,<br><span class="text-gradient">Start Engaging.</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl font-semibold text-slate-200 leading-snug max-w-3xl mb-4">
+            Automate Your Patient Journey with Milestone-Driven Drip Campaigns
+        </p>
+        <p class="text-slate-400 text-base md:text-lg max-w-2xl mb-12 leading-relaxed">
+            Deliver the right message at the exact right moment in your patient's healing journey. Save your front desk hours of "brain-numbing" work while increasing engagement and protecting your bottom line.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a href="https://sked.life/contact/"
+                class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-white text-lg">
+                Contact Sales to Upgrade Today
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="#video"
+                class="glass inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white text-lg"
+                style="border: 1px solid rgba(255,255,255,0.12); transition: background 0.2s, border-color 0.2s;">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch It in Action
+            </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
+            <div class="stat-card p-6 text-center reveal">
+                <div class="font-heading font-black text-4xl text-gradient-warn mb-2">$100K+</div>
+                <p class="text-slate-400 text-sm leading-snug">in annual revenue lost<br>from missed appointments</p>
+            </div>
+            <div class="stat-card p-6 text-center reveal" style="transition-delay:80ms">
+                <div class="font-heading font-black text-4xl text-gradient-blue mb-2">Up to 50%</div>
+                <p class="text-slate-400 text-sm leading-snug">reduction in no-shows<br>with automated follow-ups</p>
+            </div>
+            <div class="stat-card p-6 text-center reveal" style="transition-delay:160ms">
+                <div class="font-heading font-black text-4xl text-gradient mb-2">7×</div>
+                <p class="text-slate-400 text-sm leading-snug">cheaper to retain a patient<br>than to acquire a new one</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 inset-x-0 h-28 pointer-events-none"
+        style="background: linear-gradient(to bottom, transparent, #020617);"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     VIDEO — PLACED HIGH ON PAGE
+═══════════════════════════════════════════════ -->
+<section id="video" class="relative py-8 pb-24 overflow-hidden" style="background: #020617;">
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
+        style="background: radial-gradient(ellipse, rgba(0,154,220,0.1) 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-slate-600 text-xs uppercase tracking-widest font-semibold mb-10">See It in Action</p>
+
+        <!-- Animated gradient border wraps the video -->
+        <!-- TO ADD VIDEO: Replace the placeholder div below with a Vimeo iframe:
+             <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID?badge=0&autopause=0&player_id=0&app_id=58479"
+                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                 referrerpolicy="strict-origin-when-cross-origin"
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SKED Drip Campaigns Demo"></iframe>
+        -->
+        <div class="video-wrap reveal">
+            <div class="video-inner" style="padding-bottom: 56.25%; min-height: 380px;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#080f1e;">
+                    <div style="width:72px;height:72px;border-radius:50%;background:rgba(0,154,220,0.12);border:2px solid rgba(0,154,220,0.35);display:flex;align-items:center;justify-content:center;">
+                        <svg style="width:32px;height:32px;color:#009ADC;margin-left:5px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p style="color:#64748b;font-family:'Outfit',sans-serif;font-size:0.9375rem;font-weight:600;letter-spacing:0.01em;">Drip Campaign Demo Video</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     THE PROBLEM
+═══════════════════════════════════════════════ -->
+<section class="relative py-24 lg:py-32 overflow-hidden" style="background: #020617;">
+
+    <div class="absolute inset-0 dot-grid opacity-10 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+                style="color: #EF4444; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);">
+                The Problem
+            </span>
+            <h2 class="font-heading font-black text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4">
+                Leads don't go cold.<br><span class="text-gradient-warn">They go confused.</span>
+            </h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                Consistency is critical in chiropractic care — but keeping patients engaged is exhausting.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Lost Revenue -->
+            <div class="problem-card p-8 reveal" style="transition-delay: 60ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.22);">
+                    <svg class="w-6 h-6" style="color:#EF4444;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="font-heading font-black mb-3" style="font-size:3rem; background: linear-gradient(135deg, #F59E0B, #EF4444); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">$100K+</div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Lost Revenue</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Missed appointments interrupt care plans, delay recovery, and can cost a clinic over <strong class="text-slate-200">$100,000 in lost revenue annually</strong>. Every no-show is money walking out the door.
+                </p>
+            </div>
+
+            <!-- Staff Burnout -->
+            <div class="problem-card p-8 reveal" style="transition-delay: 120ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.22);">
+                    <svg class="w-6 h-6" style="color:#EF4444;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="font-heading font-black text-5xl mb-3" style="color: #EF4444;">Burnout</div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Staff Burnout</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Managing follow-ups manually through 2-way SMS is a <strong class="text-slate-200">productivity killer</strong>. It quickly turns into a full-time job for your front desk, opening the door for mistakes and costly human error.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     THE SOLUTION
+═══════════════════════════════════════════════ -->
+<section class="relative py-24 lg:py-32 overflow-hidden"
+    style="background: radial-gradient(ellipse at 50% 0%, rgba(0,154,220,0.09) 0%, transparent 60%), #020617;">
+
+    <div class="absolute top-0 inset-x-0 h-px" style="background: linear-gradient(90deg, transparent, #009ADC, #38BDF8, #009ADC, transparent);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+                style="color: #38BDF8; background: rgba(0,154,220,0.1); border: 1px solid rgba(0,154,220,0.28);">
+                The Solution
+            </span>
+            <h2 class="font-heading font-black text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6">
+                Meet Drip Campaigns:<br>
+                <span class="text-gradient">Tailored Messages for Every<br>Visit Milestone</span>
+            </h2>
+            <p class="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                Most marketing tools rely strictly on time delays. Our industry-leading Drip Campaign builder understands that <strong class="text-white">patients heal by the visit, not just by the calendar</strong>. We allow you to trigger automated messages based on actual appointment milestones.
+            </p>
+        </div>
+
+        <!-- Milestone Journey Visual -->
+        <div class="reveal" style="transition-delay: 100ms;">
+            <div class="glass rounded-2xl p-8 md:p-10" style="border: 1px solid rgba(0,154,220,0.14);">
+                <p class="text-center text-slate-500 text-xs uppercase tracking-widest font-semibold mb-10">Patient Healing Journey — Automated at Every Step</p>
+
+                <!-- Journey nodes -->
+                <div class="flex items-center gap-1 overflow-x-auto pb-2">
+
+                    <div class="flex flex-col items-center gap-2.5 flex-shrink-0 px-2">
+                        <div class="milestone-dot active">1</div>
+                        <span class="text-xs text-slate-300 font-semibold whitespace-nowrap">First Visit</span>
+                        <span class="text-xs text-slate-600 whitespace-nowrap">Welcome</span>
+                    </div>
+
+                    <div class="flow-line"></div>
+
+                    <div class="flex flex-col items-center gap-2.5 flex-shrink-0 px-2">
+                        <div class="milestone-dot">3</div>
+                        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">Visit 3</span>
+                        <span class="text-xs text-slate-600 whitespace-nowrap">Check-In</span>
+                    </div>
+
+                    <div class="flow-line"></div>
+
+                    <div class="flex flex-col items-center gap-2.5 flex-shrink-0 px-2">
+                        <div class="milestone-dot">5</div>
+                        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">Visit 5</span>
+                        <span class="text-xs text-slate-600 whitespace-nowrap">Progress</span>
+                    </div>
+
+                    <div class="flow-line"></div>
+
+                    <div class="flex flex-col items-center gap-2.5 flex-shrink-0 px-2">
+                        <div class="milestone-dot success">10</div>
+                        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">Visit 10</span>
+                        <span class="text-xs text-slate-600 whitespace-nowrap">Milestone</span>
+                    </div>
+
+                    <div class="flow-line"></div>
+
+                    <div class="flex flex-col items-center gap-2.5 flex-shrink-0 px-2">
+                        <div class="milestone-dot success" style="font-size:0.75rem;">25+</div>
+                        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">Visit 25+</span>
+                        <span class="text-xs text-slate-600 whitespace-nowrap">Loyalty</span>
+                    </div>
+
+                </div>
+
+                <!-- Trigger examples -->
+                <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+                    <div class="glass rounded-xl px-5 py-3 text-sm text-center" style="border-color: rgba(0,154,220,0.2);">
+                        <span class="text-slate-500">Trigger: </span>
+                        <span class="font-semibold" style="color: #38BDF8;">"After 1 appt arrival"</span>
+                    </div>
+                    <span class="text-slate-600 font-bold text-xs uppercase tracking-widest hidden sm:block">or</span>
+                    <div class="glass rounded-xl px-5 py-3 text-sm text-center" style="border-color: rgba(16,185,129,0.2);">
+                        <span class="text-slate-500">Trigger: </span>
+                        <span class="font-semibold" style="color: #10B981;">"Wait 7 days <em>or</em> 2 visits — whichever comes first"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FEATURES / VALUE PILLARS
+═══════════════════════════════════════════════ -->
+<section class="relative py-24 lg:py-32 overflow-hidden" style="background: #0B1120;">
+
+    <div class="absolute inset-0 dot-grid opacity-10 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
+        style="background: radial-gradient(ellipse, rgba(0,154,220,0.05) 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+                style="color: #38BDF8; background: rgba(0,154,220,0.08); border: 1px solid rgba(0,154,220,0.22);">
+                Key Features
+            </span>
+            <h2 class="font-heading font-black text-4xl lg:text-5xl leading-tight">
+                Built for How Chiropractic<br><span class="text-gradient">Actually Works.</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Visit-Based Triggers -->
+            <div class="feat-card p-8 reveal" style="transition-delay: 60ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(0,154,220,0.12); border: 1px solid rgba(0,154,220,0.25);">
+                    <svg class="w-6 h-6" style="color:#009ADC;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Visit-Based Triggers</h3>
+                <p class="text-slate-400 leading-relaxed mb-4">
+                    Move beyond basic time delays. Set campaigns to trigger <strong class="text-slate-200">"After 1 appt arrival"</strong> or build complex logic like <strong class="text-slate-200">"Wait 7 days OR 2 appointments — whichever comes first."</strong>
+                </p>
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold" style="background: rgba(0,154,220,0.1); color: #38BDF8; border: 1px solid rgba(0,154,220,0.2);">
+                    Industry-first milestone logic
+                </span>
+            </div>
+
+            <!-- Omnichannel -->
+            <div class="feat-card p-8 reveal" style="transition-delay: 120ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25);">
+                    <svg class="w-6 h-6" style="color:#10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Omnichannel Reach</h3>
+                <p class="text-slate-400 leading-relaxed mb-5">
+                    Reach patients where they actually look. Automatically deploy your sequences across <strong class="text-slate-200">SMS, Email, and Push notifications</strong> simultaneously — all in one automated flow.
+                </p>
+                <div class="flex gap-2">
+                    <span class="inline-flex px-3 py-1.5 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.09); color: #10B981; border: 1px solid rgba(16,185,129,0.2);">SMS</span>
+                    <span class="inline-flex px-3 py-1.5 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.09); color: #10B981; border: 1px solid rgba(16,185,129,0.2);">Email</span>
+                    <span class="inline-flex px-3 py-1.5 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.09); color: #10B981; border: 1px solid rgba(16,185,129,0.2);">Push</span>
+                </div>
+            </div>
+
+            <!-- Set and Forget -->
+            <div class="feat-card p-8 reveal" style="transition-delay: 180ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.25);">
+                    <svg class="w-6 h-6" style="color:#A855F7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                </div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Set-and-Forget Automation</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Build customized journeys — like a <strong class="text-slate-200">"First 90 Days"</strong> onboarding flow or a <strong class="text-slate-200">"Major Milestones of Care"</strong> sequence. Eliminate manual texting, reduce front-desk workload, and ensure <strong class="text-slate-200">no patient ever falls through the cracks.</strong>
+                </p>
+            </div>
+
+            <!-- Reduce No-Shows -->
+            <div class="feat-card p-8 reveal" style="transition-delay: 240ms;">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style="background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.25);">
+                    <svg class="w-6 h-6" style="color:#38BDF8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="font-heading font-black text-4xl text-gradient-blue mb-2">Up to 50%</div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-3">Reduce Costly No-Shows</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Automated, personalized follow-ups keep your practice top-of-mind and have been proven to <strong class="text-slate-200">reduce no-shows by up to 50%</strong>. Every saved appointment is revenue back in your pocket.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SOCIAL PROOF
+═══════════════════════════════════════════════ -->
+<section class="relative py-20 overflow-hidden" style="background: #020617;">
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="proof-card p-10 md:p-16 text-center reveal">
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8"
+                style="background: rgba(0,154,220,0.08); border: 1px solid rgba(0,154,220,0.2);">
+                <svg class="w-4 h-4" style="color:#009ADC;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+                <span class="text-xs font-bold uppercase tracking-widest" style="color: #38BDF8;">Did You Know?</span>
+            </div>
+
+            <p class="font-heading font-black text-3xl md:text-5xl leading-tight text-white mb-6">
+                Retaining an existing patient is about<br>
+                <span class="text-gradient">7× cheaper</span><br>
+                than acquiring a new one.
+            </p>
+
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Drip campaigns automatically deliver the education and check-ins your patients need to stay committed to their care plan — without a single manual text from your team.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════════ -->
+<section class="relative py-28 lg:py-36 overflow-hidden"
+    style="background: radial-gradient(ellipse at 25% 50%, rgba(0,154,220,0.14) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(16,185,129,0.08) 0%, transparent 50%), #020617;">
+
+    <div class="absolute inset-0 dot-grid opacity-15 pointer-events-none"></div>
+    <div class="absolute top-0 inset-x-0 h-px" style="background: linear-gradient(90deg, transparent, #009ADC, #38BDF8, #009ADC, transparent);"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-8 reveal"
+            style="background: rgba(0,154,220,0.12); border: 1px solid rgba(0,154,220,0.28);">
+            <svg class="w-8 h-8" style="color:#009ADC;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+        </div>
+
+        <h2 class="font-heading font-black text-4xl lg:text-5xl xl:text-6xl leading-tight mb-5 reveal">
+            Ready to Experience<br><span class="text-gradient">Superior Engagement<br>and Retention?</span>
+        </h2>
+
+        <p class="text-slate-400 text-lg max-w-xl mx-auto mb-10 reveal" style="transition-delay: 80ms;">
+            Don't let another patient fall off their care plan. Contact our sales team today and start protecting your bottom line.
+        </p>
+
+        <div class="flex justify-center reveal" style="transition-delay: 160ms;">
+            <a href="https://sked.life/contact/"
+                class="btn-primary inline-flex items-center justify-center gap-2.5 px-10 py-5 rounded-xl font-heading font-bold text-white text-xl">
+                Contact Sales to Upgrade Today
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12 reveal" style="transition-delay: 240ms;">
+            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                HIPAA compliant
+            </div>
+            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                <svg class="w-4 h-4 flex-shrink-0" style="color:#009ADC;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                Built into SKED
+            </div>
+            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+                No long-term contracts
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer style="background:#020617; border-top: 1px solid rgba(255,255,255,0.05);" class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+            <img src="./sked_logo.png" alt="SKED" class="h-8 w-auto brightness-0 invert opacity-60 mb-3">
+            <p class="text-slate-600 text-sm">&copy; 2026 SKED Inc. All rights reserved.</p>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-slate-600">
+            <a href="https://sked.life/privacy-policy/" class="hover:text-slate-300 transition-colors">Privacy</a>
+            <a href="https://sked.life/terms-of-service/" class="hover:text-slate-300 transition-colors">Terms</a>
+            <a href="./meet-alina-preview.html" class="hover:text-slate-300 transition-colors">Meet Alina</a>
+            <a href="https://sked.life/contact/" class="hover:text-slate-300 transition-colors font-semibold text-slate-400" style="color: #009ADC;">Contact Sales →</a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
