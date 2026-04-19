@@ -30,12 +30,12 @@ From `tailwind.config` in `demoSKED.html`:
 - **Text Gradient**: `linear-gradient(to right, #009ADC, #0284c7)`
 
 ### Typography
-- **Heading Font**: `Outfit` (Weights: 400, 500, 600, 700, 800)
+- **Heading Font**: `Poppins` (Weights: 400, 500, 600, 700, 800, 900) — matches the main sked.life site
 - **Body Font**: `Inter` (Weights: 300, 400, 500, 600, 700)
 
 **CDN Link**:
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 ```
 
 ### Assets
@@ -53,7 +53,7 @@ Use this configuration in the `<head>` of any new HTML file to match the current
             extend: {
                 fontFamily: {
                     sans: ['Inter', 'sans-serif'],
-                    heading: ['Outfit', 'sans-serif'],
+                    heading: ['Poppins', 'sans-serif'],
                 },
                 colors: {
                     sked: {
