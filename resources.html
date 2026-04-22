@@ -123,6 +123,20 @@
             transform: translateY(-3px);
             box-shadow: 0 20px 40px -15px rgba(0, 154, 220, 0.2);
         }
+
+        .filter-btn {
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #009ADC;
+            color: #fff;
+            border-color: #009ADC;
+        }
+
+        [data-card].hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -169,13 +183,21 @@
         <section class="py-16 lg:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+                <!-- Filter Bar -->
+                <div class="flex flex-wrap gap-2 mb-10" id="filter-bar">
+                    <button class="filter-btn active px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 bg-white" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 bg-white" data-filter="guide">Guide</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 bg-white" data-filter="checklist">Checklist</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 bg-white" data-filter="report">Report</button>
+                </div>
+
                 <!-- Featured Resource -->
-                <div class="mb-6">
+                <div class="mb-6" id="featured-label">
                     <p class="text-xs font-bold text-sked-blue uppercase tracking-widest mb-4">Featured Resource</p>
                 </div>
 
-                <a href="https://sked.life/collect-google-reviews/" target="_blank" rel="noopener"
-                    class="block card-hover mb-16 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-soft group">
+                <a href="https://sked.life/collect-google-reviews/" target="_blank" rel="noopener" data-card data-type="guide"
+                    class="block card-hover mb-16 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-soft group" id="featured-card">
                     <div class="flex items-center gap-6 p-6 lg:p-8">
                         <!-- Cover Image -->
                         <div class="flex-shrink-0">
@@ -208,7 +230,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <!-- Checklist: 13 Ways to Reduce No-Shows -->
-                    <a href="https://sked.life/reduce-patient-no-shows/" target="_blank" rel="noopener"
+                    <a href="https://sked.life/reduce-patient-no-shows/" target="_blank" rel="noopener" data-card data-type="checklist"
                         class="card-hover flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group">
                         <div class="bg-gradient-to-br from-sked-light to-blue-100 h-48 flex items-center justify-center p-8">
                             <div class="text-center">
@@ -241,7 +263,7 @@
                     </a>
 
                     <!-- Guide: 10 Ways to Grow -->
-                    <a href="https://www.chirohd.com/web/landing-pages/10-ways-to-grow-your-chiropractic-practice" target="_blank" rel="noopener"
+                    <a href="https://www.chirohd.com/web/landing-pages/10-ways-to-grow-your-chiropractic-practice" target="_blank" rel="noopener" data-card data-type="guide"
                         class="card-hover flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group">
                         <div class="bg-gradient-to-br from-violet-50 to-purple-100 h-48 flex items-center justify-center p-8">
                             <div class="text-center">
@@ -274,7 +296,7 @@
                     </a>
 
                     <!-- Report: State of the Industry -->
-                    <a href="https://www.chirohd.com/web/landing-pages/state-of-the-industry" target="_blank" rel="noopener"
+                    <a href="https://www.chirohd.com/web/landing-pages/state-of-the-industry" target="_blank" rel="noopener" data-card data-type="report"
                         class="card-hover flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group">
                         <div class="bg-gradient-to-br from-slate-100 to-slate-200 h-48 flex items-center justify-center p-8">
                             <div class="text-center">
@@ -334,6 +356,34 @@
             <p class="text-gray-400 text-sm">&copy; 2025 SKED. All rights reserved.</p>
         </div>
     </footer>
+
+<!-- Resource filtering -->
+<script>
+  const filterBar = document.getElementById('filter-bar');
+  const featuredCard = document.getElementById('featured-card');
+  const featuredLabel = document.getElementById('featured-label');
+  const gridCards = document.querySelectorAll('.grid [data-card]');
+
+  filterBar.addEventListener('click', e => {
+    const btn = e.target.closest('[data-filter]');
+    if (!btn) return;
+
+    const filter = btn.dataset.filter;
+
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const featuredType = featuredCard.dataset.type;
+    const showFeatured = filter === 'all' || filter === featuredType;
+    featuredCard.classList.toggle('hidden', !showFeatured);
+    featuredLabel.classList.toggle('hidden', !showFeatured);
+
+    gridCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.type === filter;
+      card.classList.toggle('hidden', !match);
+    });
+  });
+</script>
 
 <!-- UTM parameter retention -->
 <script>
