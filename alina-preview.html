@@ -86,6 +86,7 @@
             color: #1e293b !important;
         }
     </style>
+    <script src="utm-passthrough.js"></script>
 </head>
 <body class="antialiased relative selection:bg-sked-blue selection:text-white">
 
@@ -259,20 +260,6 @@
         </div>
     </section>
 
-    <!-- UTM parameter retention -->
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-      const utmParams = new URLSearchParams();
-      utmKeys.forEach(key => { if (params.get(key)) utmParams.set(key, params.get(key)); });
-      if ([...utmParams].length) {
-        document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
-          const url = new URL(a.href);
-          utmParams.forEach((v, k) => url.searchParams.set(k, v));
-          a.href = url.toString();
-        });
-      }
-    </script>
 
 </body>
 </html>
