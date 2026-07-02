@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
+    <title>The Hidden Patient Leakage Quiz | SKED</title>
+    <meta name="description" content="Take the Hidden Patient Leakage Quiz to find where your chiropractic practice is quietly losing patients — and plug the gap to boost profitability with no extra marketing spend.">
+    <meta property="og:title" content="The Hidden Patient Leakage Quiz for Chiropractic Practices">
+    <meta property="og:description" content="Answer a few quick questions to see where your process might be leaking patients. Plugging the hole could significantly increase your profitability with no additional marketing investment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/hidden-patient-leakage-quiz.html">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KSZRMH2T');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10947408779"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-10947408779');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '142763714514798');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=142763714514798&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js.hs-scripts.com/7120555.js?businessUnitId=2910837"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- HubSpot Forms v2 embed API -->
+    <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS & SKED Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        sked: {
+                            blue: '#009ADC',
+                            dark: '#0B1120',
+                            darker: '#020617',
+                            light: '#E0F2FE',
+                            accent: '#38BDF8',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)',
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 154, 220, 0.15)',
+                        'glow-blue': '0 0 20px rgba(0, 154, 220, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #009ADC, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Quiz option cards */
+        .quiz-option {
+            transition: all 0.15s ease;
+        }
+
+        .quiz-option:hover {
+            border-color: #009ADC;
+            background-color: #F0F9FF;
+        }
+
+        .quiz-option.selected {
+            border-color: #009ADC;
+            background-color: #E0F2FE;
+            box-shadow: 0 0 0 1px #009ADC inset;
+        }
+
+        .quiz-option.selected .quiz-indicator {
+            background-color: #009ADC;
+            border-color: #009ADC;
+        }
+
+        .quiz-option.selected .quiz-check {
+            opacity: 1;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.35s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script src="utm-passthrough.js"></script>
+</head>
+
+<body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSZRMH2T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Minimal Header -->
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-20">
+                <a href="https://sked.life"><img src="./sked_logo.png" alt="SKED Logo" class="h-8 md:h-10 w-auto"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <section class="relative bg-hero-gradient min-h-[calc(100vh-5rem)] py-10 lg:py-16 overflow-hidden">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- ===================== INTRO ===================== -->
+                <div id="quiz-intro" class="fade-in">
+                    <div class="text-center">
+                        <div
+                            class="inline-flex items-center px-4 py-2 rounded-full border border-sked-blue/30 bg-white/80 backdrop-blur-sm text-sked-blue text-xs font-bold tracking-wide uppercase mb-8 shadow-sm">
+                            <svg class="w-3.5 h-3.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                </path>
+                            </svg>
+                            Free 2-Minute Assessment
+                        </div>
+
+                        <h1
+                            class="text-4xl lg:text-5xl xl:text-6xl font-heading font-extrabold leading-tight mb-6 text-slate-900 tracking-tight">
+                            The Hidden <span class="text-gradient">Patient Leakage</span> Quiz
+                        </h1>
+
+                        <p class="text-xl font-medium text-slate-700 mb-6 leading-relaxed max-w-2xl mx-auto">
+                            Take this quiz to see where your process might be leaking patients. Plugging the hole could
+                            significantly increase your profitability &mdash; with no additional marketing investment
+                            required.
+                        </p>
+
+                        <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm rounded-full px-5 py-2.5 border border-yellow-400/40 mb-10 shadow-sm">
+                            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4z"></path>
+                            </svg>
+                            <span class="text-sm font-semibold text-slate-800">Complete the quiz to be entered for a chance to win a $100 gift card</span>
+                        </div>
+
+                        <div>
+                            <button id="start-btn"
+                                class="inline-flex items-center gap-2 bg-sked-blue hover:bg-[#0284c7] text-white font-heading font-semibold text-lg px-8 py-4 rounded-xl shadow-soft transition-colors">
+                                Start the Quiz
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="text-slate-500 text-sm mt-4">14 quick questions &middot; takes about 2 minutes</p>
+                    </div>
+                </div>
+
+                <!-- ===================== QUIZ ===================== -->
+                <div id="quiz-flow" class="hidden">
+                    <!-- Progress -->
+                    <div class="mb-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span id="progress-label" class="text-sm font-semibold text-sked-blue">Question 1 of 14</span>
+                            <span id="progress-pct" class="text-sm font-medium text-slate-400">7%</span>
+                        </div>
+                        <div class="w-full h-2 bg-white rounded-full overflow-hidden border border-slate-200">
+                            <div id="progress-bar" class="h-full bg-gradient-to-r from-sked-blue to-sked-accent rounded-full transition-all duration-300" style="width: 7%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question card -->
+                    <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8 lg:p-10">
+                        <div id="question-area"></div>
+
+                        <!-- Navigation -->
+                        <div class="flex items-center justify-between mt-8 pt-6 border-t border-slate-100">
+                            <button id="back-btn"
+                                class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 font-medium px-2 py-2 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                Back
+                            </button>
+                            <button id="next-btn" disabled
+                                class="inline-flex items-center gap-2 bg-sked-blue text-white font-heading font-semibold px-7 py-3 rounded-xl shadow-soft transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#0284c7]">
+                                <span id="next-label">Next</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== FORM (RESULTS GATE) ===================== -->
+                <div id="quiz-form-step" class="hidden fade-in">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sked-blue/10 text-sked-blue mb-5">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 mb-3">Your results are ready!</h2>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto">Enter your details below to unlock your personalized Patient Leakage results &mdash; and get entered for a chance to win a <span class="font-semibold text-slate-800">$100 gift card</span>.</p>
+                    </div>
+
+                    <div class="relative max-w-lg mx-auto">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-sked-blue to-sked-accent rounded-3xl blur opacity-25"></div>
+                        <div class="relative bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/50 ring-1 ring-black/5">
+                            <div id="hubspot-embed"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sked-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+                <div>
+                    <img src="./sked_logo.png" alt="SKED Logo" class="h-8 w-auto brightness-0 invert opacity-80 mb-4">
+                    <p class="text-slate-400 text-sm">&copy; 2025 SKED. All rights reserved.</p>
+                </div>
+                <p class="text-slate-500 text-sm max-w-sm">
+                    By submitting this form, you agree to receive marketing communications from SKED. We respect your privacy.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== QUIZ LOGIC ===================== -->
+    <script>
+        // -------- Question data (points per option) --------
+        const QUESTIONS = [
+            {
+                short: "Patient communication channels",
+                q: "How do patients communicate with your practice?",
+                sub: "Please select all that apply.",
+                multi: true,
+                options: [
+                    { label: "Text message", pts: 1 },
+                    { label: "Website chat", pts: 1 },
+                    { label: "Online scheduling", pts: 1 },
+                    { label: "Email", pts: 1 },
+                    { label: "Phone", pts: 1 },
+                    { label: "Social media messaging", pts: 1 }
+                ]
+            },
+            {
+                short: "Next-appointment scheduling",
+                q: "When are most patients scheduled for their next appointment?",
+                multi: false,
+                options: [
+                    { label: "Before they leave the office after an appointment", pts: 3 },
+                    { label: "Within a few days after their appointment", pts: 2 },
+                    { label: "Usually after we remind them", pts: 1 },
+                    { label: "Patients schedule themselves later", pts: 0 }
+                ]
+            },
+            {
+                short: "Patients stopping care without discharge",
+                q: "How often do patients stop care without formally discharging?",
+                multi: false,
+                options: [
+                    { label: "Rarely", pts: 3 },
+                    { label: "Occasionally", pts: 2 },
+                    { label: "Frequently", pts: 0 },
+                    { label: "We don't know", pts: 0 }
+                ]
+            },
+            {
+                short: "No-show / late cancellation rate",
+                q: "What is your average no-show or late cancellation rate?",
+                multi: false,
+                options: [
+                    { label: "Less than 5%", pts: 3 },
+                    { label: "6–10%", pts: 1 },
+                    { label: "11–20%", pts: 0 },
+                    { label: "21%+", pts: 0 }
+                ]
+            },
+            {
+                short: "Missed-appointment follow-up speed",
+                q: "If a patient misses an appointment, how quickly does your office follow up?",
+                multi: false,
+                options: [
+                    { label: "Within 1 hour through an automated process", pts: 3 },
+                    { label: "Within 1 hour through a manual process", pts: 2 },
+                    { label: "Same day", pts: 1 },
+                    { label: "Within a few days", pts: 1 },
+                    { label: "Only if the patient reaches back out", pts: 0 }
+                ]
+            },
+            {
+                short: "Identifying inactive patients",
+                q: "Can you easily identify which patients are inactive?",
+                multi: false,
+                options: [
+                    { label: "Yes, we have a real-time list", pts: 3 },
+                    { label: "Yes, with some digging, we could find them", pts: 2 },
+                    { label: "Yes, but they're hard to find", pts: 1 },
+                    { label: "No", pts: 0 }
+                ]
+            },
+            {
+                short: "Communicating with inactive patients",
+                q: "How do you communicate with inactive patients?",
+                sub: "Please select all that apply.",
+                multi: true,
+                options: [
+                    { label: "Text message", pts: 1 },
+                    { label: "Email", pts: 1 },
+                    { label: "Phone call", pts: 1 },
+                    { label: "Direct mail", pts: 1 },
+                    { label: "We don't", pts: 0 }
+                ]
+            },
+            {
+                short: "90+ day lapsed patients",
+                q: "What happens if a patient hasn't been seen in 90+ days?",
+                multi: false,
+                options: [
+                    { label: "They automatically enter a reactivation workflow", pts: 3 },
+                    { label: "Staff manually follow up", pts: 2 },
+                    { label: "We occasionally notice and reach out", pts: 1 },
+                    { label: "Nothing happens", pts: 0 }
+                ]
+            },
+            {
+                short: "Asking for feedback",
+                q: "How often do you ask patients for feedback?",
+                multi: false,
+                options: [
+                    { label: "Automatically after visits", pts: 3 },
+                    { label: "Weekly through a manual process", pts: 2 },
+                    { label: "Occasionally", pts: 1 },
+                    { label: "Rarely", pts: 0 },
+                    { label: "Never", pts: 0 }
+                ]
+            },
+            {
+                short: "Handling negative feedback",
+                q: "How do you handle negative patient feedback?",
+                multi: false,
+                options: [
+                    { label: "We address it immediately and try to make it right", pts: 3 },
+                    { label: "We get back to them within a few days", pts: 1 },
+                    { label: "We ignore it", pts: 0 },
+                    { label: "We don't collect feedback", pts: 0 }
+                ]
+            },
+            {
+                short: "Ease of rescheduling",
+                q: "How easy is it for patients to reschedule appointments?",
+                multi: false,
+                options: [
+                    { label: "Very easy via self-serve tools", pts: 3 },
+                    { label: "They can call and we'll move the appointment; no complaints heard", pts: 1 },
+                    { label: "We've heard rescheduling is somewhat inconvenient", pts: 0 },
+                    { label: "Patients are consistently frustrated", pts: 0 }
+                ]
+            },
+            {
+                short: "Biggest barrier to engagement",
+                q: "What is your single biggest barrier to keeping patients engaged in their plan of care?",
+                multi: false,
+                options: [
+                    { label: "Cost concerns", pts: 1 },
+                    { label: "Time/availability", pts: 1 },
+                    { label: "Poor patient education on the value of chiropractic", pts: 0 },
+                    { label: "Communication gaps", pts: 0 },
+                    { label: "Lack of follow-up systems", pts: 0 }
+                ]
+            },
+            {
+                short: "Reviewing attrition trends",
+                q: "How often do you review patient attrition trends?",
+                multi: false,
+                options: [
+                    { label: "Weekly", pts: 3 },
+                    { label: "Monthly", pts: 2 },
+                    { label: "Quarterly", pts: 1 },
+                    { label: "We don't", pts: 0 }
+                ]
+            },
+            {
+                short: "EHR integration",
+                q: "Are patient communication platforms integrated with your EHR?",
+                multi: false,
+                options: [
+                    { label: "Yes", pts: 3 },
+                    { label: "No", pts: 1 },
+                    { label: "We don't have any patient communication tools", pts: 0 }
+                ]
+            }
+        ];
+
+        const MAX_SCORE = 44;
+
+        // -------- Outcome titles (used in the insights summary; full copy lives on the thank-you page) --------
+        const RESULTS = {
+            rockstar: { title: "Retention Rockstar" },
+            foundation: { title: "Strong Foundation, Hidden Gaps" },
+            leakage: { title: "Silent Patient Leakage May Be Happening" }
+        };
+
+        function getTier(score) {
+            if (score >= 35) return "rockstar";
+            if (score >= 20) return "foundation";
+            return "leakage";
+        }
+
+        // -------- State --------
+        const answers = QUESTIONS.map(() => []); // array of selected option indices per question
+        let step = 0; // 0-based index into QUESTIONS
+        let formCreated = false;
+
+        // -------- Elements --------
+        const introEl = document.getElementById('quiz-intro');
+        const flowEl = document.getElementById('quiz-flow');
+        const formStepEl = document.getElementById('quiz-form-step');
+        const questionArea = document.getElementById('question-area');
+        const nextBtn = document.getElementById('next-btn');
+        const nextLabel = document.getElementById('next-label');
+        const backBtn = document.getElementById('back-btn');
+        const progressLabel = document.getElementById('progress-label');
+        const progressPct = document.getElementById('progress-pct');
+        const progressBar = document.getElementById('progress-bar');
+
+        // -------- Rendering --------
+        function renderQuestion() {
+            const q = QUESTIONS[step];
+            const selected = answers[step];
+
+            let html = '<div class="fade-in">';
+            html += '<h2 class="text-2xl lg:text-3xl font-heading font-bold text-slate-900 leading-snug">' + q.q + '</h2>';
+            if (q.sub) {
+                html += '<p class="text-slate-500 mt-2 text-sm font-medium">' + q.sub + '</p>';
+            }
+            html += '<div class="mt-6 space-y-3">';
+            q.options.forEach((opt, i) => {
+                const isSel = selected.includes(i);
+                const shape = q.multi ? 'rounded-md' : 'rounded-full';
+                html += '<button type="button" data-idx="' + i + '" class="quiz-option w-full text-left flex items-start gap-4 border-2 border-slate-200 rounded-xl px-5 py-4 ' + (isSel ? 'selected' : '') + '">' +
+                    '<span class="quiz-indicator flex-shrink-0 w-6 h-6 mt-0.5 border-2 border-slate-300 ' + shape + ' flex items-center justify-center bg-white">' +
+                    '<svg class="quiz-check w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>' +
+                    '</span>' +
+                    '<span class="text-slate-800 font-medium leading-snug">' + opt.label + '</span>' +
+                    '</button>';
+            });
+            html += '</div></div>';
+            questionArea.innerHTML = html;
+
+            // Wire option clicks
+            questionArea.querySelectorAll('.quiz-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.getAttribute('data-idx'), 10);
+                    toggleOption(idx);
+                });
+            });
+
+            // Progress
+            const pct = Math.round(((step) / QUESTIONS.length) * 100);
+            progressLabel.textContent = 'Question ' + (step + 1) + ' of ' + QUESTIONS.length;
+            progressPct.textContent = Math.round(((step + 1) / QUESTIONS.length) * 100) + '%';
+            progressBar.style.width = Math.round(((step + 1) / QUESTIONS.length) * 100) + '%';
+
+            // Nav state
+            backBtn.style.visibility = step === 0 ? 'hidden' : 'visible';
+            nextLabel.textContent = (step === QUESTIONS.length - 1) ? 'See My Results' : 'Next';
+            updateNextState();
+        }
+
+        function toggleOption(idx) {
+            const q = QUESTIONS[step];
+            const selected = answers[step];
+            const pos = selected.indexOf(idx);
+            if (q.multi) {
+                if (pos > -1) selected.splice(pos, 1);
+                else selected.push(idx);
+            } else {
+                answers[step] = [idx];
+            }
+            renderQuestion();
+        }
+
+        function updateNextState() {
+            nextBtn.disabled = answers[step].length === 0;
+        }
+
+        // -------- Navigation --------
+        document.getElementById('start-btn').addEventListener('click', () => {
+            introEl.classList.add('hidden');
+            flowEl.classList.remove('hidden');
+            step = 0;
+            renderQuestion();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (answers[step].length === 0) return;
+            if (step < QUESTIONS.length - 1) {
+                step++;
+                renderQuestion();
+            } else {
+                goToForm();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (step > 0) {
+                step--;
+                renderQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // -------- Scoring + insights --------
+        function computeScore() {
+            let total = 0;
+            answers.forEach((sel, i) => {
+                const q = QUESTIONS[i];
+                if (q.multi) {
+                    sel.forEach(idx => { total += q.options[idx].pts; });
+                } else if (sel.length) {
+                    total += q.options[sel[0]].pts;
+                }
+            });
+            return total;
+        }
+
+        function buildInsightsText(score, tierKey) {
+            let t = "HIDDEN PATIENT LEAKAGE QUIZ\n";
+            t += "Score: " + score + " / " + MAX_SCORE + "\n";
+            t += "Result: " + RESULTS[tierKey].title + "\n\n";
+
+            t += "ANSWER SUMMARY:\n";
+            QUESTIONS.forEach((q, i) => {
+                const sel = answers[i] || [];
+                const labels = sel.length ? sel.map(idx => q.options[idx].label).join(", ") : "(no answer)";
+                const pts = q.multi
+                    ? sel.reduce((a, idx) => a + q.options[idx].pts, 0)
+                    : (sel.length ? q.options[sel[0]].pts : 0);
+                t += "• " + q.short + ": " + labels + " (" + pts + " pts)\n";
+            });
+
+            // Flag the lowest-scoring areas so sales knows where the leaks are
+            const gaps = [];
+            QUESTIONS.forEach((q, i) => {
+                const sel = answers[i] || [];
+                const pts = q.multi
+                    ? sel.reduce((a, idx) => a + q.options[idx].pts, 0)
+                    : (sel.length ? q.options[sel[0]].pts : 0);
+                if (pts === 0) gaps.push(q.short);
+            });
+            if (gaps.length) {
+                t += "\nFLAGGED GAPS (0-point areas):\n";
+                gaps.forEach(g => { t += "• " + g + "\n"; });
+            }
+
+            return t;
+        }
+
+        // -------- Form step (results gate) --------
+        function goToForm() {
+            const score = computeScore();
+            const tierKey = getTier(score);
+            const insightsText = buildInsightsText(score, tierKey);
+
+            flowEl.classList.add('hidden');
+            formStepEl.classList.remove('hidden');
+
+            if (formCreated) return;
+            formCreated = true;
+
+            // Path A — URL query param (native pre-pop fallback)
+            const prepopUrl = window.location.pathname + '?dynamic_content_insights=' + encodeURIComponent(insightsText);
+            window.history.replaceState({}, document.title, prepopUrl);
+
+            setTimeout(function () {
+                hbspt.forms.create({
+                    portalId: "7120555",
+                    formId: "1cc52a5d-f3de-4cc6-82fc-6e33b0259cdc",
+                    region: "na1",
+                    target: "#hubspot-embed",
+                    // Path B — direct field injection (reliable)
+                    onFormReady: function ($form) {
+                        try {
+                            window.history.replaceState({}, document.title, window.location.pathname);
+                            const input = $form.find('input[name="dynamic_content_insights"], textarea[name="dynamic_content_insights"]')[0];
+                            if (input && !input.value) {
+                                input.value = insightsText;
+                                input.dispatchEvent(new Event('input', { bubbles: true }));
+                                input.dispatchEvent(new Event('change', { bubbles: true }));
+                            }
+                        } catch (e) {}
+                    }
+                });
+            }, 100);
+        }
+
+        // -------- Redirect to the thank-you page on submit --------
+        // A dedicated thank-you URL gives Meta a distinct conversion pageview.
+        function goToThankYou() {
+            const score = computeScore();
+            // Preserve any UTM params so the thank-you page + its CTAs keep attribution.
+            const params = new URLSearchParams();
+            params.set('score', score);
+            if (typeof __utmParams !== 'undefined') {
+                __utmParams.forEach((v, k) => params.set(k, v));
+            }
+            window.location.href = 'hidden-patient-leakage-quiz-thank-you.html?' + params.toString();
+        }
+
+        // Listen for HubSpot form submission
+        window.addEventListener("message", function (event) {
+            if (event.data && event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+                goToThankYou();
+            }
+        });
+    </script>
+
+    <!-- UTM parameter retention -->
+    <script>
+        // Capture UTMs once at load — the URL gets rewritten during form pre-pop,
+        // so we cache them to re-apply to CTA links revealed later (results screen).
+        const __utmParams = (function () {
+            const params = new URLSearchParams(window.location.search);
+            const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+            const out = new URLSearchParams();
+            utmKeys.forEach(key => { if (params.get(key)) out.set(key, params.get(key)); });
+            return out;
+        })();
+
+        function applyUtmToLinks() {
+            if (![...__utmParams].length) return;
+            document.querySelectorAll('a[href*="sked.life"]').forEach(a => {
+                const url = new URL(a.href);
+                __utmParams.forEach((v, k) => url.searchParams.set(k, v));
+                a.href = url.toString();
+            });
+        }
+        applyUtmToLinks();
+    </script>
+
+</body>
+
+</html>
