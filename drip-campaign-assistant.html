@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Tool: Build Chiropractic Drip Campaigns in Minutes | SKED</title>
+    <link rel="icon" type="image/png" href="https://skedlife.b-cdn.net/wp-content/uploads/2023/08/cropped-SKED-Square-S-Icon-32x32.png">
+    <meta name="description" content="The SKED Drip Campaign Assistant is a free ChatGPT that writes complete patient education campaign sequences for your chiropractic practice — in minutes.">
+    <meta property="og:title" content="Free AI Tool: Build Chiropractic Drip Campaigns in Minutes">
+    <meta property="og:description" content="The SKED Drip Campaign Assistant is a free ChatGPT that writes complete patient education campaign sequences for your chiropractic practice — in minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://content.sked.life/drip-campaign-assistant.html">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KSZRMH2T');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10947408779"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-10947408779');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '142763714514798');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=142763714514798&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js.hs-scripts.com/7120555.js?businessUnitId=2910837"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS & SKED Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sked: {
+                            blue: '#009ADC',
+                            dark: '#0B1120',
+                            darker: '#020617',
+                            light: '#E0F2FE',
+                            accent: '#38BDF8',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)',
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 154, 220, 0.15)',
+                        'glow-blue': '0 0 20px rgba(0, 154, 220, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #009ADC, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .step-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -15px rgba(0, 154, 220, 0.2);
+        }
+
+        /* HubSpot form overrides */
+        .hs-form-field label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #334155;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .hs-form-field input,
+        .hs-form-field select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #fff;
+        }
+
+        .hs-form-field input:focus,
+        .hs-form-field select:focus {
+            border-color: #009ADC;
+            box-shadow: 0 0 0 3px rgba(0, 154, 220, 0.15);
+        }
+
+        .hs-button {
+            width: 100%;
+            background-color: #009ADC;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 14px rgba(0, 154, 220, 0.35);
+            margin-top: 0.5rem;
+        }
+
+        .hs-button:hover {
+            background-color: #0284c7;
+            transform: translateY(-1px);
+        }
+
+        .hs-error-msgs {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .hs_submit {
+            margin-top: 0.5rem;
+        }
+
+        .hs-form fieldset {
+            max-width: 100% !important;
+        }
+
+        .hs-form .hs-form-field {
+            margin-bottom: 1rem;
+        }
+    </style>
+    <script src="utm-passthrough.js"></script>
+</head>
+
+<body class="antialiased selection:bg-sked-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSZRMH2T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Minimal Header -->
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-20">
+                <img src="./sked_logo.png" alt="SKED Logo" class="h-8 md:h-10 w-auto">
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+
+        <!-- Hero Section -->
+        <section class="relative bg-hero-gradient pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
+
+                    <!-- Left Column: Copy -->
+                    <div class="lg:col-span-7 mb-12 lg:mb-0 pt-4">
+
+                        <!-- Badge -->
+                        <div class="inline-flex items-center px-4 py-2 rounded-full border border-sked-blue/30 bg-white/80 backdrop-blur-sm text-sked-blue text-xs font-bold tracking-wide uppercase mb-8 shadow-sm">
+                            <svg class="w-3.5 h-3.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Free AI Tool &bull; Works With Any Platform
+                        </div>
+
+                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-heading font-extrabold leading-tight mb-6 text-slate-900 tracking-tight">
+                            Build a Full Patient Drip Campaign in <span class="text-gradient">Minutes — Not Hours</span>
+                        </h1>
+
+                        <p class="text-xl font-medium text-slate-700 mb-8 leading-relaxed max-w-2xl">
+                            The SKED Drip Campaign Assistant is a free ChatGPT that writes complete, ready-to-use patient education sequences — tailored to your practice, your voice, and your patients' care journey.
+                        </p>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-sked-blue/10 mb-10 max-w-2xl">
+                            <p class="text-slate-700 leading-relaxed mb-3">
+                                You already know what patients need to hear. But writing a 12-message new patient series, a 28-week pregnancy campaign, or milestone-based education from scratch? That takes time you don't have.
+                            </p>
+                            <p class="text-slate-700 leading-relaxed">
+                                Just answer a few questions and the SKED Drip Campaign Assistant generates the full sequence for you — with your practice's voice, your patients' care goals, and the right timing baked in. <strong>No SKED account needed.</strong>
+                            </p>
+                        </div>
+
+                        <!-- What It Does -->
+                        <div class="mb-10">
+                            <h2 class="text-lg font-heading font-bold text-slate-800 mb-5">What you can build in minutes:</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg pt-1.5"><strong>New patient onboarding sequences</strong> — build trust and educate from visit 1 through the full care plan</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg pt-1.5"><strong>Pregnancy care campaigns</strong> — weekly messages from week 12 through 40, customized to your approach</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg pt-1.5"><strong>Visit milestone celebrations</strong> — automated messages at visit 5, 12, 24 that keep patients motivated</span>
+                                </li>
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-sked-light shadow-sm flex items-center justify-center text-sked-blue mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-700 text-lg pt-1.5"><strong>Condition-specific education</strong> — pediatric, back pain, shoulder, family wellness, and more</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Platform note -->
+                        <div class="flex items-start gap-3 bg-sked-light/60 rounded-xl p-4 max-w-xl border border-sked-blue/10">
+                            <svg class="w-5 h-5 text-sked-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <p class="text-slate-700 text-sm">
+                                <strong>Works with any email or SMS platform.</strong> SKED users can paste the content directly into SKED's campaign builder — messages come with the right placeholders already included.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Form -->
+                    <div class="lg:col-span-5 relative lg:sticky lg:top-32">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-sked-blue to-sked-accent rounded-3xl blur opacity-30"></div>
+
+                        <div class="relative bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/50 ring-1 ring-black/5">
+                            <div class="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-xs shadow-lg transform rotate-3">
+                                100% FREE
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-sked-light flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-sked-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-heading font-bold text-slate-900 leading-tight">Get Free Access</h3>
+                                    <p class="text-sked-blue font-semibold text-sm">SKED Drip Campaign Assistant</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 mb-6 text-sm">Enter your info below and we'll send you the link to get started instantly.</p>
+
+                            <!-- HubSpot Form -->
+                            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                            <script>
+                                hbspt.forms.create({
+                                    portalId: "7120555",
+                                    formId: "8cf69d4c-658f-4d87-8b5a-b81f9e69358d",
+                                    region: "na1",
+                                    redirectUrl: "https://content.sked.life/drip-campaign-assistant-thank-you.html"
+                                });
+                            </script>
+
+                            <p class="text-xs text-center text-slate-400 mt-4">
+                                No ChatGPT Plus required. Works with the free version of ChatGPT.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <h2 class="text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 mb-4">How It Works</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Three questions. Full campaign. Ready to use.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="step-card bg-sked-slate rounded-2xl p-7 border border-slate-100 shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-sked-light flex items-center justify-center mx-auto mb-5">
+                            <span class="text-2xl font-heading font-extrabold text-sked-blue">1</span>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-3">Share Your Practice</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Paste your website URL and the assistant learns your practice's voice, specialty, and philosophy — so every message sounds like you.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card bg-sked-slate rounded-2xl p-7 border border-slate-100 shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-sked-light flex items-center justify-center mx-auto mb-5">
+                            <span class="text-2xl font-heading font-extrabold text-sked-blue">2</span>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-3">Choose Your Campaign</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Pick the campaign type, how many messages, and when to send them — by visit count, by day, or by week. The assistant knows SKED's framework inside and out.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card bg-sked-slate rounded-2xl p-7 border border-slate-100 shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-sked-light flex items-center justify-center mx-auto mb-5">
+                            <span class="text-2xl font-heading font-extrabold text-sked-blue">3</span>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-3">Get Your Messages</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Receive a complete sequence — with placeholders already filled in — ready to copy straight into SKED, your email platform, or any SMS tool you use.</p>
+                    </div>
+                </div>
+
+                <!-- Pro tip -->
+                <div class="mt-10 flex items-start gap-4 bg-sked-light/50 rounded-xl p-5 border border-sked-blue/10 max-w-2xl mx-auto">
+                    <svg class="w-5 h-5 text-sked-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <p class="text-slate-700 text-sm">
+                        <strong>Pro tip:</strong> Use ChatGPT's dictation button to dump everything you know about a topic — the assistant will turn your spoken thoughts into a polished campaign. Dr. Erik uses it this way himself.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For -->
+        <section class="py-20 bg-sked-slate border-t border-slate-100">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 mb-4">Built for Chiropractic Practices of Every Size</h2>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto">Whether you're a solo doc or running a multi-location practice, this tool will save you hours of writing.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-900">Using SKED?</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">Paste the generated messages straight into SKED's Drip Campaigns builder. The content is formatted with the right placeholders and timed to match SKED's campaign logic — zero reformatting needed.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-lg bg-sked-light flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-sked-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-900">Not using SKED yet?</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">Use the content in whatever email or SMS platform you're already using — Mailchimp, ActiveCampaign, GoHighLevel, or anything else. The messages are plain text, ready for any system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sked-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+                <div>
+                    <img src="./sked_logo.png" alt="SKED Logo" class="h-8 w-auto brightness-0 invert opacity-80 mb-4">
+                    <p class="text-slate-400 text-sm">&copy; 2026 SKED. All rights reserved.</p>
+                </div>
+                <p class="text-slate-500 text-sm max-w-sm">
+                    By submitting, you agree to receive marketing communications from SKED. We respect your privacy.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
